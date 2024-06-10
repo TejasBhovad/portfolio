@@ -23,3 +23,4 @@
 ## Reference:
 
 [1] https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
+[2] https://play.tailwindcss.com/YelhilBeHb
