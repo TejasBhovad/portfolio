@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { Loader } from "@react-three/drei";
 import Sphere from "@/components/Sphere";
 import { Canvas } from "@react-three/fiber";
@@ -16,11 +17,29 @@ const MemoizedRingSpheres = memo(RingSpheres);
 
 const ModelDisplay = memo(() => {
   return (
-    <div className="w-full h-full bg-gray-400">
-      <section className="w-96 h-96 bg-gray-500 flex items-center justify-center">
-        <h1 className="absolute z-20 font-black text-white text-7xl select-none">
+    <motion.div
+      className="w-full h-full flex items-center justify-center"
+      variants={{
+        hidden: { opacity: 0, y: 0 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 1.25, ease: "easeInOut" }}
+    >
+      <section className="w-full h-full flex items-center justify-center">
+        <motion.h1
+          className="transition-all absolute z-10 font-black text-white text-7xl sm:text-8xl select-none"
+          variants={{
+            hidden: { opacity: 0, y: 0 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.75, ease: "easeInOut" }}
+        >
           {"<T>"}
-        </h1>
+        </motion.h1>
         <Canvas camera={{ zoom: 2 }} gl={{ antialias: true }}>
           <EffectComposer>
             <Bloom
@@ -56,7 +75,7 @@ const ModelDisplay = memo(() => {
         </Canvas>
         <Loader />
       </section>
-    </div>
+    </motion.div>
   );
 });
 

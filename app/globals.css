@@ -13,6 +13,13 @@
     --color-toggle-hover: 222, 231, 234;
     --color-toggle-muted: 199, 213, 218;
 
+    --color-twitter-muted: 180, 217, 229;
+    --color-twitter-base: 101, 167, 188;
+    --color-youtube-muted: 234, 206, 206;
+    --color-youtube-base: 239, 142, 142;
+    --color-github-muted: 175, 172, 172;
+    --color-github-base: 252, 252, 252;
+
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
 
@@ -52,6 +59,13 @@
     --color-toggle-base: 255, 255, 255;
     --color-toggle-hover: 51, 57, 61;
     --color-toggle-muted: 61, 68, 72;
+
+    --color-twitter-muted: 69, 79, 85;
+    --color-twitter-base: 101, 167, 188;
+    --color-youtube-muted: 78, 60, 60;
+    --color-youtube-base: 186, 115, 115;
+    --color-github-muted: 21, 22, 23;
+    --color-github-base: 252, 252, 252;
   }
   .dark {
     --background: 0 0% 3.9%;

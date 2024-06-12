@@ -11,7 +11,10 @@ import {
   stagger,
 } from "framer-motion";
 import SwitchModes from "@/app/components/SwitchModes";
+
 function Navbar() {
+  const [isMounted, setIsMounted] = useState(false);
+
   const clickScope = useRef(null);
   const menuButtonRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -36,6 +39,9 @@ function Navbar() {
 
   const staggerList = stagger(0.1, { startDelay: 0.25 });
   useEffect(() => {
+    if (!open) {
+      return;
+    }
     animate(
       "ul",
       {
@@ -60,6 +66,10 @@ function Navbar() {
       }
     );
   }, [open]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
@@ -88,7 +98,7 @@ function Navbar() {
 
   return (
     <motion.nav
-      className="fixed w-full h-14 flex px-6 py-2 items-center bg-base"
+      className="fixed w-full h-14 flex px-6 py-2 items-center bg-base z-20"
       ref={clickScope}
       variants={{
         visible: { y: 0 },
@@ -123,11 +133,13 @@ function Navbar() {
             }}
             animate={open ? "visible" : "hidden"}
           >
-            <ul className={`${open ? "p-2" : ""}`}>
-              {items.map((item, index) => (
-                <motion.li key={index}>{item}</motion.li>
-              ))}
-            </ul>
+            {open && (
+              <ul className={`${open ? "p-2" : ""}`}>
+                {items.map((item, index) => (
+                  <motion.li key={index}>{item}</motion.li>
+                ))}
+              </ul>
+            )}
           </div>
         </li>
 

@@ -38,6 +38,19 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
+        twitter: {
+          base: withOpacity("--color-twitter-base"),
+          muted: withOpacity("--color-twitter-muted"),
+        },
+        github: {
+          base: withOpacity("--color-github-base"),
+          muted: withOpacity("--color-github-muted"),
+        },
+        youtube: {
+          base: withOpacity("--color-youtube-base"),
+          muted: withOpacity("--color-youtube-muted"),
+        },
         // primary: {
         //   DEFAULT: "hsl(var(--primary))",
         //   foreground: "hsl(var(--primary-foreground))",

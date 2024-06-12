@@ -75,7 +75,14 @@ const SwitchModes = () => {
         onClick={toggleTheme}
         className="flex bg-toggleMuted p-2 rounded-full items-center justify-center text-toggle hover:bg-toggleHover transition-colors duration-300 ease-in-out"
       >
-        <svg
+        <motion.svg
+          variants={{
+            hidden: { opacity: 0, scale: 0.75 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.35, ease: "easeInOut" }}
           width="24"
           height="24"
           className="w-full h-full flex items-center justify-center"
@@ -89,7 +96,7 @@ const SwitchModes = () => {
               <motion.path fill={fill} d={path} />
             </g>
           )}
-        </svg>
+        </motion.svg>
       </button>
     </div>
   );

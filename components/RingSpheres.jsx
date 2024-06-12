@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-
+import { useState } from "react";
 import { useFrame } from "@react-three/fiber";
 const Sphere = ({ position, size, color }) => {
   return (
@@ -21,12 +21,28 @@ const Sphere = ({ position, size, color }) => {
 };
 const RingSpheres = ({ position, size, color }, props) => {
   const meshRef = useRef();
-  useFrame((state, delta) => (meshRef.current.rotation.z += delta * -0.5));
+  const [speed, setSpeed] = useState(2);
+
+  useFrame((state, delta) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.z += delta * -1 * speed;
+    }
+  });
+
   useEffect(() => {
     if (meshRef.current) {
       meshRef.current.rotation.x = Math.PI / 2;
     }
+
+    // Decrease speed over time to a minimum of 0.1
+    const intervalId = setInterval(() => {
+      setSpeed((prevSpeed) => Math.max(prevSpeed - 0.02, 0.1));
+    }, 100);
+
+    // Clean up interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
+
   const numSpheres = 12; // Change this to the number of spheres you want
   const spherePositions = Array.from({ length: numSpheres }, (_, i) => {
     const angle = (i / numSpheres) * 2 * Math.PI; // Calculate the angle for each sphere
