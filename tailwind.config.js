@@ -29,10 +29,12 @@ module.exports = {
       textColor: {
         base: withOpacity("--color-text-base"),
         muted: withOpacity("--color-text-muted"),
+        inverted: withOpacity("--color-background-base"),
       },
       colors: {
         primary: withOpacity("--color-primary"),
         secondary: withOpacity("--color-secondary"),
+        inverted: withOpacity("--color-text-base"),
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -63,10 +65,7 @@ module.exports = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
+        muted: withOpacity("--color-text-muted"),
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",

@@ -39,6 +39,7 @@ const SocialLinks = () => {
       <div className="w-full flex justify-center gap-3">
         {socialLinks.map((link, index) => (
           <motion.div
+            key={index}
             className=""
             variants={{
               hidden: { opacity: 0, y: 0, scale: 0.9 },

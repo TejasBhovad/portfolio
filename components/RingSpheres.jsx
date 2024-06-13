@@ -55,7 +55,7 @@ const RingSpheres = ({ position, size, color }, props) => {
       <torusGeometry args={size} />
       <meshStandardMaterial color={color} />
       {spherePositions.map((pos, index) => (
-        <group position={pos}>
+        <group position={pos} key={index}>
           <Sphere size={[0.3, 32, 32]} color={sphereColors[index]} />
           <pointLight position={[0, 0, 0]} intensity={0.55} distance={5} />
         </group>

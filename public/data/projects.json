@@ -1,0 +1,38 @@
+[
+  {
+    "projectName": "SoundXLR",
+    "imageName": "soundxlr.png",
+    "projectDescription": "Web app to create and share Soundboards",
+    "featured": true,
+    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
+    "liveLink": "https://soundxlr.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/soundboard"
+  },
+  {
+    "projectName": "2",
+    "imageName": "soundxlr.png",
+    "projectDescription": "Web app to create and share Soundboards",
+    "featured": true,
+    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
+    "liveLink": "https://soundxlr.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/soundboard"
+  },
+  {
+    "projectName": "3",
+    "imageName": "soundxlr.png",
+    "projectDescription": "Web app to create and share Soundboards",
+    "featured": true,
+    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
+    "liveLink": "https://soundxlr.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/soundboard"
+  },
+  {
+    "projectName": "4",
+    "imageName": "soundxlr.png",
+    "projectDescription": "Web app to create and share Soundboards",
+    "featured": true,
+    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
+    "liveLink": "https://soundxlr.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/soundboard"
+  }
+]
