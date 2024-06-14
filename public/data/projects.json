@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "projectName": "SoundXLR",
     "imageName": "soundxlr.png",
     "projectDescription": "Web app to create and share Soundboards",
@@ -9,27 +10,30 @@
     "githubLink": "https://github.com/TejasBhovad/soundboard"
   },
   {
-    "projectName": "2",
+    "id": 2,
+    "projectName": "RemoteUpload",
     "imageName": "soundxlr.png",
-    "projectDescription": "Web app to create and share Soundboards",
+    "projectDescription": "Share files from your computer w/o login",
     "featured": true,
     "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
     "liveLink": "https://soundxlr.vercel.app/",
     "githubLink": "https://github.com/TejasBhovad/soundboard"
   },
   {
-    "projectName": "3",
+    "id": 3,
+    "projectName": "Ollama UI",
     "imageName": "soundxlr.png",
-    "projectDescription": "Web app to create and share Soundboards",
+    "projectDescription": "Chat with Llama3 locally",
     "featured": true,
     "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
     "liveLink": "https://soundxlr.vercel.app/",
     "githubLink": "https://github.com/TejasBhovad/soundboard"
   },
   {
-    "projectName": "4",
+    "id": 4,
+    "projectName": "Code docs",
     "imageName": "soundxlr.png",
-    "projectDescription": "Web app to create and share Soundboards",
+    "projectDescription": "Collection of code snippets taught in Uni",
     "featured": true,
     "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
     "liveLink": "https://soundxlr.vercel.app/",

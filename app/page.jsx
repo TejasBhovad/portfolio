@@ -6,13 +6,14 @@ import SocialLinks from "@/app/components/SocialLinks";
 import ModelDisplay from "@/components/ModelDisplay";
 import ProjectCard from "@/app/components/ProjectCard";
 import ProjectCardSmall from "./components/ProjectCardSmall";
+import ContactLinks from "./components/ContactLinks";
 import { motion } from "framer-motion";
 const page = () => {
   function TextBox() {
     return (
       <div className="w-full flex flex-col gap-8">
         <motion.span
-          className="text-base h-16 text-5xl sm:text-6xl font-bold w-full text-center"
+          className="text-base h-16 text-3xl sm:text-6xl font-bold w-full text-center"
           variants={{
             hidden: { opacity: 0, y: 10 },
             visible: { opacity: 1, y: 0 },
@@ -57,22 +58,25 @@ const page = () => {
         </div>
       </div>
       <div className="h-auto flex flex-col items-center p-8 bg-foreground">
-        <div className="flex flex-col w-full gap-2  max-w-7xl">
-          <span className="w-full justify-start text-4xl font-bold">
-            Projects
-          </span>
-          <span className="w-full justify-start text-muted text-xl font-regular">
-            Things I have worked on
-          </span>
+        <div className="flex flex-col w-full gap-6  max-w-7xl">
+          <div className="flex flex-col gap-2">
+            <span className="w-full justify-start text-4xl font-bold">
+              Projects
+            </span>
+            <span className="w-full justify-start text-muted text-xl font-regular">
+              Things I have worked on
+            </span>
+          </div>
+
           <div className="w-full flex flex-col md:flex-row gap-4">
             <div className="w-full md:w-2/3 flex flex-col sm:flex-row justify-between gap-4">
               {projects.slice(0, 2).map((project) => (
-                <ProjectCard key={project.name} {...project} />
+                <ProjectCard key={project.id} {...project} />
               ))}
             </div>
             <div className="w-full md:w-1/3 flex flex-col gap-4">
               {projects.slice(2, 4).map((project) => (
-                <ProjectCardSmall key={project.name} {...project} />
+                <ProjectCardSmall key={project.id} {...project} />
               ))}
             </div>
           </div>
@@ -83,7 +87,7 @@ const page = () => {
             <Button
               variant="primary"
               size="large"
-              className="bg-inverted text-inverted px-4 rounded-md text-xl font-medium py-1"
+              className="bg-inverted text-inverted px-4 rounded-md text-xl font-medium py-1 transition-all hover:scale-95 active:scale-105"
               onClick={() => handleClick()}
             >
               Explore projects
@@ -91,8 +95,32 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="w-32 h-32 bg-primary">Primary</div>
-      <div className="w-32 h-32 bg-foreground">Foreground</div>
+      <div className="h-auto w-full">
+        <div className="h-auto w-full bg-gradient-to-br to-bg from-primary/50 p-8">
+          <div className="w-full h-full bg-foreground rounded-2xl border-[1.5px] border-muted/30 shadow-md p-8 flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
+              <span className="text-2xl font-semibold text-center sm:text-left">
+                Want to work together?
+              </span>
+              <span className="text-muted  text-center sm:text-left">
+                Feel free to reach out for collaborations or just a friendly
+                hello
+              </span>
+            </div>
+            <div className="flex sm:flex-row flex-col sm:gap-0 gap-4">
+              <Button
+                variant="primary"
+                size="large"
+                className="bg-inverted text-inverted px-6 rounded-sm text-lg font-semibold py-1 transition-all hover:scale-95 active:scale-105"
+                onClick={() => handleClick()}
+              >
+                Send a note
+              </Button>
+              <ContactLinks />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

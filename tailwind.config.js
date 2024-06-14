@@ -35,6 +35,7 @@ module.exports = {
         primary: withOpacity("--color-primary"),
         secondary: withOpacity("--color-secondary"),
         inverted: withOpacity("--color-text-base"),
+        bg: withOpacity("--color-background-base"),
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

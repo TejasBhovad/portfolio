@@ -10,7 +10,6 @@ const ProjectCard = ({
   imageName,
   projectName,
   projectDescription,
-  techStack,
   documentationLink,
   liveLink,
   githubLink,
