@@ -59,7 +59,7 @@ const ModelDisplay = memo(() => {
             intensity={1}
           />
           <pointLight position={[-10, -10, -10]} decay={2} intensity={1} />
-
+          <pointLight position={[0, -2, 4]} intensity={10} size={3} />
           <Suspense fallback={null}>
             <MemoizedSphere
               position={[2, 0, 0]}

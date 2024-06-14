@@ -24,3 +24,6 @@
 
 [1] https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
 [2] https://play.tailwindcss.com/YelhilBeHb
+
+https://pmndrs.github.io/uikit/examples/card/
+https://github.com/pmndrs/uikit/blob/main/examples/card/src/App.tsx
