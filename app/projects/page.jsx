@@ -53,9 +53,9 @@ const page = () => {
       });
     }
     return (
-      <div className="w-full sm:px-6 text-center sm:text-left flex text-4xl font-bold text-white justify-center sm:justify-start">
+      <div className="w-full h-auto sm:px-6 text-center sm:text-left flex text-4xl font-bold text-white justify-center sm:justify-start">
         <div
-          className=" flex cursor-copy"
+          className="cursor-copy w-full h-auto  text-center sm:text-left flex text-4xl font-bold text-white justify-center sm:justify-start"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           // on click copy the link to clipboard with the id
@@ -93,8 +93,8 @@ const page = () => {
   const webProjects = projects.filter((project) => project.type === "web");
   const otherProjects = projects.filter((project) => project.type === "other");
   return (
-    <div className="flex flex-col w-full h-full items-start justify-center">
-      <div className="p-8 w-full h-auto">
+    <div className="flex flex-col w-full h-auto items-start justify-center">
+      <div className="p-8 w-full h-auto justify-center flex">
         <div className="w-full flex flex-col items-center gap-4 max-w-7xl">
           <h1 className="w-full sm:px-6 text-center sm:text-left text-4xl font-bold text-white">
             <HoverHeader id="web-projects" titleContent="Web Projects" />

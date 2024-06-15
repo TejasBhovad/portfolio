@@ -9,6 +9,7 @@ import ProjectCard from "@/app/components/ProjectCard";
 import ProjectCardSmall from "./components/ProjectCardSmall";
 import ContactLinks from "./components/ContactLinks";
 import { motion } from "framer-motion";
+import ContactForm from "./components/ContactForm";
 const page = () => {
   function TextBox() {
     return (
@@ -109,14 +110,7 @@ const page = () => {
               </span>
             </div>
             <div className="flex sm:flex-row flex-col sm:gap-0 gap-4">
-              <Button
-                variant="primary"
-                size="large"
-                className="bg-inverted text-inverted px-6 rounded-sm text-lg font-semibold py-1 transition-all hover:scale-95 active:scale-105"
-                onClick={() => handleClick()}
-              >
-                Send a note
-              </Button>
+              <ContactForm />
               <ContactLinks />
             </div>
           </div>

@@ -23,7 +23,7 @@ const ProjectCard = ({
       whileHover={{ scale: 1.015 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="relative rounded-xl overflow-hidden w-full h-full">
+      <div className="relative rounded-md rounded-b-none overflow-hidden w-full h-full">
         <Image
           src={`/images/${imageName}`}
           alt={imageName}
