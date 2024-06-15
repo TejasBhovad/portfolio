@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import Footer from "@/app/components/Footer";
 import projects from "@/public/data/projects.json";
 import SocialLinks from "@/app/components/SocialLinks";
 import ModelDisplay from "@/components/ModelDisplay";
@@ -121,6 +122,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -3,7 +3,7 @@
     "id": 1,
     "type": "web",
     "projectName": "SoundXLR",
-    "imageName": "soundxlr.png",
+    "imageName": "soundxlr.jpeg",
     "projectDescription": "Web app to create and share Soundboards",
     "featured": true,
     "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
@@ -14,33 +14,70 @@
     "id": 2,
     "type": "web",
     "projectName": "RemoteUpload",
-    "imageName": "soundxlr.png",
+    "imageName": "remote.jpeg",
     "projectDescription": "Share files from your computer w/o login",
-    "featured": true,
-    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
-    "liveLink": "https://soundxlr.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/soundboard"
+    "featured": false,
+    "documentationLink": "https://tejasbhovad.notion.site/RemoteUpload-9660f8aacd5e4234a837411ae124a664",
+    "liveLink": "https://remoteupload.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/remote-upload"
   },
   {
     "id": 3,
     "type": "other",
     "projectName": "Ollama UI",
-    "imageName": "soundxlr.png",
+    "imageName": "ollama.png",
     "projectDescription": "Chat with Llama3 locally",
-    "featured": true,
-    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
-    "liveLink": "https://soundxlr.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/soundboard"
+    "featured": false,
+    "documentationLink": "https://tejasbhovad.notion.site/Ollama-UI-55d9e19b4b34405d9a20457ab10801c3",
+    "githubLink": "https://github.com/TejasBhovad/ollama-ui"
   },
   {
     "id": 4,
     "type": "web",
     "projectName": "Code docs",
-    "imageName": "soundxlr.png",
+    "imageName": "code.jpeg",
     "projectDescription": "Collection of code snippets taught in Uni",
-    "featured": true,
-    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
-    "liveLink": "https://soundxlr.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/soundboard"
+    "featured": false,
+    "documentationLink": "https://codes.super.site/",
+    "liveLink": "tejasbhovad.github.io/docs",
+    "githubLink": "https://github.com/TejasBhovad/docs"
+  },
+  {
+    "id": 5,
+    "type": "other",
+    "projectName": "Snippet Manager",
+    "imageName": "snippet.jpeg",
+    "projectDescription": "Made using Rust and TauriJS",
+    "featured": false,
+    "githubLink": "https://github.com/TejasBhovad/snippet-manager"
+  },
+  {
+    "id": 6,
+    "type": "web",
+    "projectName": "Notion Gradients",
+    "imageName": "notion.jpeg",
+    "projectDescription": "Generate Gradient page covers for Notion",
+    "featured": false,
+    "liveLink": "https://notion-gradients.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/notion-covers"
+  },
+  {
+    "id": 7,
+    "type": "other",
+    "projectName": "UPixel",
+    "imageName": "upixel.png",
+    "projectDescription": "JavaFX app to upscale pixelart",
+    "featured": false,
+    "githubLink": "https://github.com/TejasBhovad/upixel"
+  },
+  {
+    "id": 8,
+    "type": "web",
+    "projectName": "LinkThing",
+    "imageName": "link.jpeg",
+    "projectDescription": "Full stack link tree clone",
+    "featured": false,
+    "liveLink": "https://linkthing.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/link-thing"
   }
 ]

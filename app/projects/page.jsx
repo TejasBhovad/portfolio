@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import projects from "@/public/data/projects.json";
 import ProjectCard from "@/app/components/ProjectCard";
 import { useToast } from "@/components/ui/use-toast";
+import Footer from "../components/Footer";
 
 const page = () => {
   const { toast } = useToast();
@@ -92,24 +93,29 @@ const page = () => {
   const webProjects = projects.filter((project) => project.type === "web");
   const otherProjects = projects.filter((project) => project.type === "other");
   return (
-    <div className="flex w-full h-full items-start justify-center p-8">
-      <div className="w-full flex flex-col items-center gap-4  max-w-7xl">
-        <h1 className="w-full sm:px-6 text-center sm:text-left text-4xl font-bold text-white">
-          <HoverHeader id="web-projects" titleContent="Web Projects" />
-        </h1>
-        <div className="w-full flex-wrap gap-2 p-2 sm:p-4 justify-center sm:justify-start flex ">
-          {webProjects.map((project, index) => (
-            <ProjectCard projectPage="true" key={index} {...project} />
-          ))}
-        </div>
+    <div className="flex flex-col w-full h-full items-start justify-center">
+      <div className="p-8 w-full h-auto">
+        <div className="w-full flex flex-col items-center gap-4 max-w-7xl">
+          <h1 className="w-full sm:px-6 text-center sm:text-left text-4xl font-bold text-white">
+            <HoverHeader id="web-projects" titleContent="Web Projects" />
+          </h1>
+          <div className="w-full flex-wrap gap-2 p-2 sm:p-4 justify-center sm:justify-start flex ">
+            {webProjects.map((project, index) => (
+              <ProjectCard projectPage="true" key={index} {...project} />
+            ))}
+          </div>
 
-        <HoverHeader id="other-projects" titleContent="Other Projects" />
+          <HoverHeader id="other-projects" titleContent="Other Projects" />
 
-        <div className="w-full flex-wrap gap-2 p-2 sm:p-4 justify-center sm:justify-start flex ">
-          {otherProjects.map((project, index) => (
-            <ProjectCard key={index} projectPage="true" {...project} />
-          ))}
+          <div className="w-full flex-wrap gap-2 p-2 sm:p-4 justify-center sm:justify-start flex ">
+            {otherProjects.map((project, index) => (
+              <ProjectCard key={index} projectPage="true" {...project} />
+            ))}
+          </div>
         </div>
+      </div>
+      <div className="h-12 w-full">
+        <Footer />
       </div>
     </div>
   );

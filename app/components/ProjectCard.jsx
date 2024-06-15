@@ -23,7 +23,7 @@ const ProjectCard = ({
       whileHover={{ scale: 1.015 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="rounded-xl">
+      <div className="relative rounded-xl overflow-hidden w-full h-full">
         <Image
           src={`/images/${imageName}`}
           alt={imageName}
@@ -31,6 +31,7 @@ const ProjectCard = ({
           height={200}
           className="rounded-md rounded-b-none object-cover w-full h-full"
         />
+        <div className="absolute rounded-md top-0 left-0 right-0 bottom-0 bg-black bg-opacity-10 duration-500 transition-all hover:opacity-0 rounded-b-none"></div>
       </div>
 
       <h2 className="text-xl text-baseColor font-semibold px-2 pt-1">
@@ -40,18 +41,27 @@ const ProjectCard = ({
         {projectDescription}
       </p>
       <div className="w-full flex px-2 gap-2 py-1">
-        <Link
-          href={documentationLink}
-          className="hover:bg-muted/30 p-1 rounded-full"
-        >
-          <Document />
-        </Link>
-        <Link href={liveLink} className="hover:bg-muted/30 p-1 rounded-full">
-          <Web />
-        </Link>
-        <Link href={githubLink} className="hover:bg-muted/30 p-1 rounded-full">
-          <GitHubLogo />
-        </Link>
+        {documentationLink && (
+          <Link
+            href={documentationLink}
+            className="hover:bg-muted/30 p-1 rounded-full"
+          >
+            <Document />
+          </Link>
+        )}
+        {liveLink && (
+          <Link href={liveLink} className="hover:bg-muted/30 p-1 rounded-full">
+            <Web />
+          </Link>
+        )}
+        {githubLink && (
+          <Link
+            href={githubLink}
+            className="hover:bg-muted/30 p-1 rounded-full"
+          >
+            <GitHubLogo />
+          </Link>
+        )}
       </div>
     </motion.div>
   );

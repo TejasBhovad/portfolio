@@ -24,18 +24,27 @@ const ProjectCardSmall = ({
         {projectDescription}
       </p>
       <div className="w-full flex px-2 gap-2 py-1">
-        <Link
-          href={documentationLink}
-          className="hover:bg-muted/30 p-1 rounded-full"
-        >
-          <Document />
-        </Link>
-        <Link href={liveLink} className="hover:bg-muted/30 p-1 rounded-full">
-          <Web />
-        </Link>
-        <Link href={githubLink} className="hover:bg-muted/30 p-1 rounded-full">
-          <GitHubLogo />
-        </Link>
+        {documentationLink && (
+          <Link
+            href={documentationLink}
+            className="hover:bg-muted/30 p-1 rounded-full"
+          >
+            <Document />
+          </Link>
+        )}
+        {liveLink && (
+          <Link href={liveLink} className="hover:bg-muted/30 p-1 rounded-full">
+            <Web />
+          </Link>
+        )}
+        {githubLink && (
+          <Link
+            href={githubLink}
+            className="hover:bg-muted/30 p-1 rounded-full"
+          >
+            <GitHubLogo />
+          </Link>
+        )}
       </div>
     </motion.div>
   );

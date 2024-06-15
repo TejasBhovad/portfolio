@@ -173,11 +173,12 @@ function Navbar() {
     </motion.nav>
   );
 }
+
 const NavbarWrapper = ({ children }) => {
   return (
-    <div suppressHydrationWarning className="w-ful h-full">
+    <div suppressHydrationWarning className="w-full h-full">
       <Navbar />
-      <main className="w-full h-full pt-14"> {children}</main>
+      <main className="w-full h-full pt-14">{children}</main>
     </div>
   );
 };
