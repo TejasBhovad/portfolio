@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "next-themes";
 
 import NavbarWrapper from "@/app/components/NavbarWrapper";
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
     <html suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <NavbarWrapper>{children}</NavbarWrapper>
+          <NavbarWrapper>{children}</NavbarWrapper> <Toaster />
         </ThemeProvider>
       </body>
     </html>

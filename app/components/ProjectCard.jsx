@@ -13,10 +13,13 @@ const ProjectCard = ({
   documentationLink,
   liveLink,
   githubLink,
+  projectPage = false,
 }) => {
   return (
     <motion.div
-      className="cursor-pointer w-full sm:w-1/2 h-auto border-[1.5px] border-muted/20 rounded-lg p-2 bg-foreground flex flex-col gap-1"
+      className={`cursor-pointer w-full sm:w-1/2 h-auto border-[1.5px] border-muted/20 rounded-lg p-2 bg-foreground flex flex-col gap-1 ${
+        projectPage ? "max-w-60" : ""
+      }`}
       whileHover={{ scale: 1.015 }}
       transition={{ duration: 0.2 }}
     >
@@ -30,7 +33,7 @@ const ProjectCard = ({
         />
       </div>
 
-      <h2 className="text-xl text-base font-semibold px-2 pt-1">
+      <h2 className="text-xl text-baseColor font-semibold px-2 pt-1">
         {projectName}
       </h2>
       <p className="text-md font-medium px-2 text-muted">

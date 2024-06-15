@@ -27,7 +27,7 @@ module.exports = {
     },
     extend: {
       textColor: {
-        base: withOpacity("--color-text-base"),
+        baseColor: withOpacity("--color-text-base"),
         muted: withOpacity("--color-text-muted"),
         inverted: withOpacity("--color-background-base"),
       },

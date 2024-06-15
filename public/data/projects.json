@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "type": "web",
     "projectName": "SoundXLR",
     "imageName": "soundxlr.png",
     "projectDescription": "Web app to create and share Soundboards",
@@ -11,6 +12,7 @@
   },
   {
     "id": 2,
+    "type": "web",
     "projectName": "RemoteUpload",
     "imageName": "soundxlr.png",
     "projectDescription": "Share files from your computer w/o login",
@@ -21,6 +23,7 @@
   },
   {
     "id": 3,
+    "type": "other",
     "projectName": "Ollama UI",
     "imageName": "soundxlr.png",
     "projectDescription": "Chat with Llama3 locally",
@@ -31,6 +34,7 @@
   },
   {
     "id": 4,
+    "type": "web",
     "projectName": "Code docs",
     "imageName": "soundxlr.png",
     "projectDescription": "Collection of code snippets taught in Uni",

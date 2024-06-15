@@ -17,7 +17,7 @@ const ProjectCardSmall = ({
       whileHover={{ scale: 1.015 }}
       transition={{ duration: 0.2 }}
     >
-      <h2 className="text-xl text-base font-semibold px-2 pt-1">
+      <h2 className="text-xl text-baseColor font-semibold px-2 pt-1">
         {projectName}
       </h2>
       <p className="text-md font-medium px-2 text-muted">

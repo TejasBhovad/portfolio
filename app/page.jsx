@@ -13,7 +13,7 @@ const page = () => {
     return (
       <div className="w-full flex flex-col gap-8">
         <motion.span
-          className="text-base h-16 text-3xl sm:text-6xl font-bold w-full text-center"
+          className="text-baseColor h-16 text-3xl sm:text-6xl font-bold w-full text-center"
           variants={{
             hidden: { opacity: 0, y: 10 },
             visible: { opacity: 1, y: 0 },

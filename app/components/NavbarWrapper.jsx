@@ -21,17 +21,17 @@ function Navbar() {
   const [scope, animate] = useAnimate();
   const items = [
     <Link href="/">
-      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-base">
+      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
         Home
       </Button>
     </Link>,
     <Link href="/projects" className="">
-      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-base">
+      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
         Projects
       </Button>
     </Link>,
     <Link href="/blog">
-      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-base">
+      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
         Blog
       </Button>
     </Link>,
@@ -110,7 +110,7 @@ function Navbar() {
       <ul className="w-full flex items-center gap-2 justify-between font-medium text-lg select-none">
         <li className="hidden sm:flex">
           <Link href="/">
-            <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-base">
+            <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
               Home
             </Button>
           </Link>
@@ -118,7 +118,7 @@ function Navbar() {
         <li className="flex sm:hidden">
           <motion.button
             ref={menuButtonRef}
-            className="rounded-full text-lg font-semibold bg-transparent hover:bg-toggle/5 aspect-square p-3 text-base"
+            className="rounded-full text-lg font-semibold bg-transparent hover:bg-toggle/5 aspect-square p-3 text-baseColor"
             onClick={() => setOpen(!open)}
             whileTap={{ scale: 0.95 }}
           >
@@ -146,14 +146,14 @@ function Navbar() {
         <div className="flex gap-4 items-center">
           <li className="hidden sm:flex">
             <Link href="/projects">
-              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-base">
+              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
                 Projects
               </Button>
             </Link>
           </li>
           <li className="hidden sm:flex">
             <Link href="/blog">
-              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-base">
+              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
                 Blog
               </Button>
             </Link>
