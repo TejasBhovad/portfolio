@@ -18,7 +18,7 @@ const page = () => {
       </motion.span>
       <Link href="https://tejasbhovad.github.io/docs/blog">
         <motion.span
-          className="text-md font-mediun hover:underline text-primary/50"
+          className="text-md font-mediun hover:underline text-muted"
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
