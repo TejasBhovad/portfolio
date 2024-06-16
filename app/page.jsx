@@ -9,6 +9,8 @@ import ProjectCard from "@/app/components/ProjectCard";
 import ProjectCardSmall from "./components/ProjectCardSmall";
 import ContactLinks from "./components/ContactLinks";
 import { motion } from "framer-motion";
+import Image from "next/image";
+const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 import ContactForm from "./components/ContactForm";
 const page = () => {
   function TextBox() {
@@ -52,7 +54,11 @@ const page = () => {
           className="transition-all max-w-screen-sm w-full h-1/3 sm:h-1/2 flex items-center justify-center"
           style={{ minHeight: "400px" }}
         >
-          <ModelDisplay />
+          {isMobile() ? (
+            <Image src="/3d.png" width={400} height={400} />
+          ) : (
+            <ModelDisplay />
+          )}
         </div>
         <div className="w-full gap-8 flex flex-col py-4 px-4">
           <TextBox />
