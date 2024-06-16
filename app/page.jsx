@@ -10,9 +10,15 @@ import ProjectCardSmall from "./components/ProjectCardSmall";
 import ContactLinks from "./components/ContactLinks";
 import { motion } from "framer-motion";
 import Image from "next/image";
-const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
+import { useState, useEffect } from "react";
+import { isMobile } from "react-device-detect";
+// Accessing the viewport parameter from the query object
 import ContactForm from "./components/ContactForm";
 const page = () => {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   function TextBox() {
     return (
       <div className="w-full flex flex-col gap-8">
@@ -44,6 +50,7 @@ const page = () => {
     );
   }
   const router = useRouter();
+
   const handleClick = () => {
     router.push("/projects");
   };
@@ -54,8 +61,13 @@ const page = () => {
           className="transition-all max-w-screen-sm w-full h-1/3 sm:h-1/2 flex items-center justify-center"
           style={{ minHeight: "400px" }}
         >
-          {isMobile() ? (
-            <Image src="/3d.png" width={400} height={400} />
+          {isMobile && isMounted ? (
+            <Image
+              src="/3d.png"
+              width={400}
+              height={400}
+              alt="3d render cause mobiles suck"
+            />
           ) : (
             <ModelDisplay />
           )}
