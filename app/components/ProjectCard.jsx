@@ -31,7 +31,7 @@ const ProjectCard = ({
           height={200}
           className="rounded-md rounded-b-none object-cover w-full h-full"
         />
-        <div className="absolute rounded-md top-0 left-0 right-0 bottom-0 bg-black bg-opacity-10 duration-500 transition-all hover:opacity-0 rounded-b-none"></div>
+        <div className="absolute rounded-md top-0 left-0 right-0 bottom-0 bg-foreground bg-opacity-10 duration-500 transition-all hover:opacity-0 rounded-b-none"></div>
       </div>
 
       <h2 className="text-xl text-baseColor font-semibold px-2 pt-1">
