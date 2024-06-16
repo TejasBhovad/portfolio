@@ -35,9 +35,59 @@ const SocialLinks = () => {
     window.open(url, "_blank");
   }
   return (
-    <div className="w-full">
-      <div className="w-full flex justify-center gap-3">
+    <div className="w-full flex flex-col gap-4">
+      <div className="w-full hidden sm:flex justify-center gap-3">
         {socialLinks.map((link, index) => (
+          <motion.div
+            key={index}
+            className=""
+            variants={{
+              hidden: { opacity: 0, y: 0, scale: 0.9 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <Button
+              key={index}
+              onClick={() => handleClick(link.url)}
+              className={`rounded-sm text-lg gap-2 ${link.background} ${link.text} ${link.hover}`}
+            >
+              {link.logo}
+              {link.name}
+            </Button>
+          </motion.div>
+        ))}
+      </div>
+      <div className="w-full flex sm:hidden justify-center gap-3">
+        {/* map only first two element */}
+        {socialLinks.slice(0, 2).map((link, index) => (
+          <motion.div
+            key={index}
+            className=""
+            variants={{
+              hidden: { opacity: 0, y: 0, scale: 0.9 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <Button
+              key={index}
+              onClick={() => handleClick(link.url)}
+              className={`rounded-sm text-lg gap-2 ${link.background} ${link.text} ${link.hover}`}
+            >
+              {link.logo}
+              {link.name}
+            </Button>
+          </motion.div>
+        ))}
+      </div>
+      <div className="w-full flex sm:hidden justify-center gap-3">
+        {/* map only first two element */}
+        {socialLinks.slice(2, 3).map((link, index) => (
           <motion.div
             key={index}
             className=""

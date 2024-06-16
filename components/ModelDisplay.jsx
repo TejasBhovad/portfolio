@@ -42,13 +42,13 @@ const ModelDisplay = memo(() => {
         </motion.h1>
         <Canvas camera={{ zoom: 2 }} gl={{ antialias: true }}>
           <EffectComposer>
-            <Bloom
+            {/* <Bloom
               luminanceThreshold={0.1}
               luminanceSmoothing={0.2}
               height={600}
-            />
+            /> */}
 
-            <Vignette eskil={false} offset={0.1} darkness={1} />
+            {/* <Vignette eskil={false} offset={0.1} darkness={1} /> */}
           </EffectComposer>
           <directionalLight position={[0, 10, 5]} intensity={1} />
           <spotLight
