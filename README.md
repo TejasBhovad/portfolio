@@ -1,14 +1,15 @@
 # Portfolio site
 
-> 🌐 Live at : [not live yet](tejasbhovad.com)
+> 🌐 Live at : [tejasbhovad.com](tejasbhovad.com)
 
 # Tech Stack
 
 - NextJS
 - ThreeJS(React3Fiber,DREI)
 - Tailwind
-- ?
-- ?
+- ShadCN
+- Framer motion
+- EmailJS
 
 # Designs
 
@@ -23,7 +24,9 @@
 ## Reference:
 
 [1] https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
+
 [2] https://play.tailwindcss.com/YelhilBeHb
 
-https://pmndrs.github.io/uikit/examples/card/
-https://github.com/pmndrs/uikit/blob/main/examples/card/src/App.tsx
+[3] https://pmndrs.github.io/uikit/examples/card/
+
+[4] https://github.com/pmndrs/uikit/blob/main/examples/card/src/App.tsx
