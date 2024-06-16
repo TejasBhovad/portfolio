@@ -1,4 +1,5 @@
 "use client";
+const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 import { useRef, useEffect } from "react";
 import { useThree, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -10,8 +11,9 @@ const Sphere = ({ position, size, textureUrl }) => {
   const texture = useLoader(TextureLoader, textureUrl); // Load the texture
   const meshRef = useRef();
   useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.1; // Adjust rotation speed here
+    if (meshRef.current && !isMobile()) {
+      // Check if not mobile
+      meshRef.current.rotation.y += delta * 0.1;
     }
   });
 
@@ -48,7 +50,8 @@ const RingSpheres = ({ position, size, color }, props) => {
   const [speed, setSpeed] = useState(2);
 
   useFrame((state, delta) => {
-    if (meshRef.current) {
+    if (meshRef.current && !isMobile()) {
+      // Check if not mobile
       meshRef.current.rotation.z += delta * -1 * speed;
     }
   });
