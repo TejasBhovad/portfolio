@@ -13,7 +13,9 @@
 
 # Designs
 
-**No spoilers 😉**
+![preview](/github/preview.jpeg)
+
+![full page](/github/full.jpeg)
 
 ## Why a new Portfolio?
 
@@ -21,12 +23,12 @@
 - It didn't accurately describe my proficiency in ThreeJS
 - Also I made new projects and I forgot the API Keys for DB
 
-## Reference:
+## Future Reference:
 
-[1] https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
+[1]https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
 
-[2] https://play.tailwindcss.com/YelhilBeHb
+[2]https://play.tailwindcss.com/YelhilBeHb
 
-[3] https://pmndrs.github.io/uikit/examples/card/
+[3]https://pmndrs.github.io/uikit/examples/card/
 
-[4] https://github.com/pmndrs/uikit/blob/main/examples/card/src/App.tsx
+[4]https://github.com/pmndrs/uikit/blob/main/examples/card/src/App.tsx
