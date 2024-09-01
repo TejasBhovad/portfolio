@@ -107,7 +107,7 @@ const page = () => {
             <Button
               variant="primary"
               size="large"
-              className="bg-inverted text-inverted px-6 rounded-md text-xl font-semibold py-1 transition-all hover:scale-95 active:scale-105"
+              className="bg-inverted text-inverted px-6 rounded-md text-xl font-semibold py-1 transition-all duration-300 hover:scale-[99.05%] active:scale-100"
               onClick={() => handleClick()}
             >
               Explore projects

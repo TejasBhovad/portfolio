@@ -79,5 +79,15 @@
     "featured": false,
     "liveLink": "https://linkthing.vercel.app/",
     "githubLink": "https://github.com/TejasBhovad/link-thing"
+  },
+  {
+    "id": 9,
+    "type": "web",
+    "projectName": "AI Battles",
+    "imageName": "battlesim.jpeg",
+    "projectDescription": "AI based Castle Siege game",
+    "featured": false,
+    "liveLink": "https://aibattles.vercel.app/",
+    "githubLink": "https://github.com/erga-labs/gemini-battle-sim"
   }
 ]

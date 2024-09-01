@@ -14,8 +14,8 @@ const ProjectCardSmall = ({
   return (
     <motion.div
       className="cursor-pointer w-full h-1/2 border-[1.5px] border-muted/20 rounded-lg p-2 bg-foreground flex flex-col gap-1"
-      whileHover={{ scale: 1.015 }}
-      transition={{ duration: 0.2 }}
+      whileHover={{ scale: 1.005 }}
+      transition={{ duration: 0.35 }}
     >
       <h2 className="text-xl text-baseColor font-semibold px-2 pt-1">
         {projectName}

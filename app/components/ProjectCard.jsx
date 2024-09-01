@@ -20,8 +20,8 @@ const ProjectCard = ({
       className={`cursor-pointer w-full sm:w-1/2 h-auto border-[1.5px] border-muted/20 rounded-lg p-2 bg-foreground flex flex-col gap-1 ${
         projectPage ? "max-w-60" : ""
       }`}
-      whileHover={{ scale: 1.015 }}
-      transition={{ duration: 0.2 }}
+      whileHover={{ scale: 1.005 }}
+      transition={{ duration: 0.35 }}
     >
       <div className="relative rounded-md rounded-b-none overflow-hidden w-full h-full">
         <Image
