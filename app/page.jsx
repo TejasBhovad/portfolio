@@ -78,7 +78,7 @@ const page = () => {
         </div>
       </div>
       <div className="h-auto flex flex-col items-center p-8 bg-foreground">
-        <div className="flex flex-col w-full gap-6  max-w-7xl">
+        <div className="flex flex-col w-full gap-6 max-w-7xl">
           <div className="flex flex-col gap-2">
             <span className="w-full justify-start text-4xl font-bold">
               Projects
@@ -116,20 +116,22 @@ const page = () => {
         </div>
       </div>
       <div className="h-auto w-full">
-        <div className="h-auto w-full bg-gradient-to-br to-bg from-primary/50 p-8">
-          <div className="w-full h-full bg-foreground rounded-2xl border-[1.5px] border-muted/30 shadow-md p-8 flex flex-col gap-5">
-            <div className="flex flex-col gap-2">
-              <span className="text-2xl font-semibold text-center sm:text-left">
-                Want to work together?
-              </span>
-              <span className="text-muted  text-center sm:text-left">
-                Feel free to reach out for collaborations or just a friendly
-                hello
-              </span>
-            </div>
-            <div className="flex sm:flex-row flex-col sm:gap-0 gap-4">
-              <ContactForm />
-              <ContactLinks />
+        <div className="h-auto w-full bg-gradient-to-br to-bg from-primary/50 p-8 flex items-center justify-center">
+          <div className="flex flex-col w-full gap-6 max-w-7xl">
+            <div className="w-full h-full bg-foreground rounded-2xl border-[1.5px] border-muted/30 shadow-md p-8 flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <span className="text-2xl font-semibold text-center sm:text-left">
+                  Want to work together?
+                </span>
+                <span className="text-muted  text-center sm:text-left">
+                  Feel free to reach out for collaborations or just a friendly
+                  hello
+                </span>
+              </div>
+              <div className="flex sm:flex-row flex-col sm:gap-0 gap-4">
+                <ContactForm />
+                <ContactLinks />
+              </div>
             </div>
           </div>
         </div>
