@@ -4,15 +4,16 @@ import Twitter from "./logos/Twitter";
 import GitHub from "./logos/GitHub";
 import YouTube from "./logos/YouTube";
 import { motion } from "framer-motion";
+import Resume from "./logos/Resume";
 const SocialLinks = () => {
   const socialLinks = [
     {
-      name: "Twitter",
+      name: "Resume",
       background: "bg-twitter-muted",
-      text: "text-twitter-base",
+      text: "text-muted",
       url: "https://x.com/tejas_bhovad",
       hover: "hover:bg-twitter-muted/80",
-      logo: <Twitter color="fill-red-700" />,
+      logo: <Resume color="fill-red-700" />,
     },
     {
       name: "GitHub",

@@ -10,6 +10,7 @@ import ProjectCardSmall from "./components/ProjectCardSmall";
 import ContactLinks from "./components/ContactLinks";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Pin from "./components/logos/Pin";
 import { useState, useEffect, memo, Suspense } from "react";
 import ContactForm from "./components/ContactForm";
 
@@ -31,13 +32,17 @@ const TextBox = memo(() => {
         Hey, I'm Tejas!
       </motion.span>
       <motion.span
-        className="text-muted text-xl text-center w-full items-center justify-center flex"
+        className="text-muted text-xl text-center w-full items-center justify-center flex gap-2"
         variants={variants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.1, ease: "easeInOut" }} // Reduced duration
       >
-        I design and build apps, and everything that comes with it.
+        Full Stack web developer based in
+        <span className="flex items-center gap-1">
+          <Pin />
+          India
+        </span>
       </motion.span>
     </div>
   );
