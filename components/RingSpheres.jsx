@@ -1,37 +1,36 @@
 "use client";
-const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
-import { useRef, useEffect } from "react";
-import { useThree, useLoader } from "@react-three/fiber";
+
+import { useRef, useEffect, useMemo } from "react";
+import { useThree, useLoader, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { useState } from "react";
-import { useFrame } from "@react-three/fiber";
 import { TextureLoader } from "three";
 
+const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
+
 const Sphere = ({ position, size, textureUrl }) => {
-  const texture = useLoader(TextureLoader, textureUrl); // Load the texture
+  const texture = useLoader(TextureLoader, textureUrl);
   const meshRef = useRef();
+
   useFrame((state, delta) => {
     if (meshRef.current && !isMobile()) {
-      // Check if not mobile
       meshRef.current.rotation.y += delta * 0.1;
     }
   });
 
   return (
-    <>
-      <mesh position={position} rotation={[1.5, -0.2, Math.PI]} ref={meshRef}>
-        <sphereGeometry args={size} />
-        <meshStandardMaterial
-          map={texture} // Use the loaded texture
-          metalness={0.75}
-          roughness={0.85}
-          clearcoat={1.0}
-        />
-      </mesh>
-    </>
+    <mesh position={position} rotation={[1.5, -0.2, Math.PI]} ref={meshRef}>
+      <sphereGeometry args={size} />
+      <meshStandardMaterial
+        map={texture}
+        metalness={0.75}
+        roughness={0.85}
+        clearcoat={1.0}
+      />
+    </mesh>
   );
 };
-const RingSpheres = ({ position, size, color }, props) => {
+
+const RingSpheres = ({ position, size, color }) => {
   const textureUrls = [
     "/sphere/nextjs.png",
     "/sphere/react.png",
@@ -47,12 +46,12 @@ const RingSpheres = ({ position, size, color }, props) => {
   ];
 
   const meshRef = useRef();
-  const [speed, setSpeed] = useState(2);
+  const speedRef = useRef(2);
 
   useFrame((state, delta) => {
     if (meshRef.current && !isMobile()) {
-      // Check if not mobile
-      meshRef.current.rotation.z += delta * -1 * speed;
+      meshRef.current.rotation.z += delta * -1 * speedRef.current;
+      speedRef.current = Math.max(speedRef.current - 0.0002, 0.1);
     }
   });
 
@@ -60,45 +59,39 @@ const RingSpheres = ({ position, size, color }, props) => {
     if (meshRef.current) {
       meshRef.current.rotation.x = Math.PI / 2;
     }
-
-    const intervalId = setInterval(() => {
-      setSpeed((prevSpeed) => Math.max(prevSpeed - 0.02, 0.1));
-    }, 100);
-
-    return () => clearInterval(intervalId);
   }, []);
 
-  const numSpheres = textureUrls.length; // Use the length of textureUrls to determine the number of spheres
-  const spherePositions = Array.from({ length: numSpheres }, (_, i) => {
-    const angle = (i / numSpheres) * 2 * Math.PI;
-    return [1.5 * Math.cos(angle), 1.5 * Math.sin(angle), 0];
-  });
+  const numSpheres = textureUrls.length;
+  const spherePositions = useMemo(() => {
+    return Array.from({ length: numSpheres }, (_, i) => {
+      const angle = (i / numSpheres) * 2 * Math.PI;
+      return [1.5 * Math.cos(angle), 1.5 * Math.sin(angle), 0];
+    });
+  }, [numSpheres]);
 
   return (
-    <mesh position={position} {...props} ref={meshRef}>
+    <mesh position={position} ref={meshRef}>
       <torusGeometry args={size} />
       <meshStandardMaterial color={color} />
       {spherePositions.map((pos, index) => (
         <group position={pos} key={index}>
-          <Sphere
-            size={[0.3, 32, 32]}
-            textureUrl={textureUrls[index]} // Pass each texture URL to the Sphere
-          />
+          <Sphere size={[0.3, 32, 32]} textureUrl={textureUrls[index]} />
           <pointLight position={[0, 0, 0]} intensity={0.55} distance={5} />
         </group>
       ))}
-      <pointLight position={[0, 3, 1]} intensity={10} color={`white`} />
-      <pointLight position={[0, -3, 1]} intensity={10} color={`white`} />
-      <pointLight position={[3, 0, 1]} intensity={10} color={`white`} />
-      <pointLight position={[-4, 0, 1]} intensity={10} color={`white`} />
+      <pointLight position={[0, 3, 1]} intensity={10} color="white" />
+      <pointLight position={[0, -3, 1]} intensity={10} color="white" />
+      <pointLight position={[3, 0, 1]} intensity={10} color="white" />
+      <pointLight position={[-4, 0, 1]} intensity={10} color="white" />
       <Controls />
     </mesh>
   );
 };
+
 const Controls = () => {
   const controls = useRef();
   const { camera, gl } = useThree();
-  const torusPosition = [2, 0, 0]; // The position of the Torus
+  const torusPosition = [2, 0, 0];
 
   useEffect(() => {
     if (controls.current) {
@@ -112,7 +105,7 @@ const Controls = () => {
       args={[camera, gl.domElement]}
       enablePan={false}
       enableZoom={false}
-      enableRotate={true}
+      enableRotate={!isMobile()}
       minPolarAngle={Math.PI / 2}
       maxPolarAngle={Math.PI / 2}
       enableDamping
