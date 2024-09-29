@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import MenuLogo from "@/app/components/MenuLogo";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -158,14 +159,7 @@ function Navbar() {
               </Button>
             </Link>
           </li>
-          <li
-            variants={{
-              visible: { opacity: 1 },
-              hidden: { opacity: 0 },
-            }}
-            animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
+          <li>
             <SwitchModes />
           </li>
         </div>

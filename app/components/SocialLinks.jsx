@@ -72,7 +72,7 @@ const SocialLinks = () => {
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <Button
               key={index}
@@ -97,7 +97,7 @@ const SocialLinks = () => {
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <Button
               key={index}
