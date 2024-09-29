@@ -64,13 +64,13 @@ const ModelDisplay = () => {
 
   const canvasProps = {
     style: { background: "transparent" },
-    camera: { zoom: 2 },
+    // camera: { zoom: 2 },
     gl: {
       antialias: true,
       alpha: true,
       pixelRatio: isClient
         ? isMobile
-          ? window.devicePixelRatio * 0.5
+          ? window.devicePixelRatio * 0.001
           : window.devicePixelRatio
         : 1,
     },
@@ -85,11 +85,11 @@ const ModelDisplay = () => {
     >
       <section className="w-full h-full flex items-center justify-center">
         {<Title />}
-        {isClient && (
+        {
           <Canvas {...canvasProps}>
             <Scene />
           </Canvas>
-        )}
+        }
         <Loader />
       </section>
     </motion.div>
