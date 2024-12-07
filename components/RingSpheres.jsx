@@ -124,7 +124,8 @@ const Controls = () => {
       ref={controls}
       args={[camera, gl.domElement]}
       enablePan={!isMobile()} // Disable pan on mobile
-      enableZoom={!isMobile()} // Disable zoom on mobile
+      enableZoom={false}
+      // enableZoom={!isMobile()} // Disable zoom on mobile
       enableRotate={!isMobile()} // Disable rotate on mobile
       minPolarAngle={Math.PI / 2}
       maxPolarAngle={Math.PI / 2}

@@ -36,7 +36,7 @@ const TextBox = memo(() => {
         variants={variants}
         initial="hidden"
         animate="visible"
-        transition={{ duration: 0.1, ease: "easeInOut" }} // Reduced duration
+        transition={{ duration: 0.2, ease: "easeInOut" }} // Reduced duration
       >
         Full Stack web developer based in
         <span className="flex items-center gap-1">
@@ -60,13 +60,9 @@ const Page = () => {
     router.push("/projects");
   };
 
-  const isMobileDevice =
-    typeof window !== "undefined" && window.innerWidth < 768;
-
   return (
-    <div className="w-full h-full mx-auto">
-      <div className="max-w-7xl mx-auto h-screen flex flex-col items-center justify-center -translate-y-24">
-        <div
+    <div className="w-full h-auto mx-auto scroll-smooth">
+      {/* <div
           className="transition-all max-w-screen-sm w-full h-1/3 sm:h-1/2 flex items-center justify-center"
           style={{ minHeight: "400px" }}
         >
@@ -136,8 +132,31 @@ const Page = () => {
               </div>
             </div>
           </div>
+        </div> */}
+      <div
+        className="w-full aspect-[3/4] bg-red-300"
+        style={{
+          maxHeight: "1080px",
+        }}
+      >
+        <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center h-full ">
+          <div className="w-full h-2/3 md:h-4/5  bg-green-400"></div>
+          <div className="w-full h-1/3 md:h-1/5 bg-blue-300"></div>
         </div>
       </div>
+      <div
+        className="w-full aspect-[3/2] bg-purple-300"
+        style={{
+          maxHeight: "480px",
+        }}
+      ></div>
+      <div
+        className="w-full aspect-[2/1] bg-orange-300"
+        style={{
+          maxHeight: "240px",
+        }}
+      ></div>
+
       <Footer />
     </div>
   );

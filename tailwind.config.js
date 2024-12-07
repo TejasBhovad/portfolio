@@ -26,6 +26,9 @@ module.exports = {
       },
     },
     extend: {
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
       textColor: {
         baseColor: withOpacity("--color-text-base"),
         muted: withOpacity("--color-text-muted"),
