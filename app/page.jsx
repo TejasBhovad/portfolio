@@ -134,14 +134,16 @@ const Page = () => {
           </div>
         </div> */}
       <div
-        className="w-full aspect-[3/4] bg-red-300"
+        className="w-full aspect-[3/4] gradient-div "
         style={{
           maxHeight: "1080px",
         }}
       >
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center h-full ">
-          <div className="w-full h-2/3 md:h-4/5  bg-green-400"></div>
-          <div className="w-full h-1/3 md:h-1/5 bg-blue-300"></div>
+          <div className="w-full h-2/3 md:h-4/5 p-8 bg-green-400/0">
+            <div className="w-full h-full bg-background rounded-xl"></div>
+          </div>
+          <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50"></div>
         </div>
       </div>
       <div
