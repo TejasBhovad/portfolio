@@ -48,7 +48,7 @@ const SwitchModes = () => {
     <div>
       <button
         onClick={toggleTheme}
-        className="flex bg-toggleMuted p-2 rounded-full items-center justify-center text-toggle hover:bg-toggleHover transition-colors duration-300 ease-in-out"
+        className="flex bg-toggleMuted/50 p-2 rounded-full items-center justify-center text-toggle hover:bg-toggleHover transition-colors duration-300 ease-in-out"
       >
         <motion.svg
           initial={{ opacity: 0, scale: 0.75, filter: "blur(4px)" }}

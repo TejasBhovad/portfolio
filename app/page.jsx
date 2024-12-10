@@ -13,7 +13,7 @@ import Image from "next/image";
 import Pin from "./components/logos/Pin";
 import { useState, useEffect, memo, Suspense } from "react";
 import ContactForm from "./components/ContactForm";
-
+import NavbarWrapper from "./components/NavbarWrapper";
 const TextBox = memo(() => {
   const variants = {
     hidden: { opacity: 0, y: 10 },
@@ -141,7 +141,7 @@ const Page = () => {
       >
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center h-full ">
           <div className="w-full h-2/3 md:h-4/5 p-8 bg-green-400/0">
-            <div className="w-full h-full bg-background rounded-xl"></div>
+            <div className="w-full h-full bg-base rounded-xl"></div>
           </div>
           <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50"></div>
         </div>
