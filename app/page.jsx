@@ -143,7 +143,10 @@ const Page = () => {
           <div className="w-full h-2/3 md:h-4/5 p-8 bg-green-400/0">
             <div className="w-full h-full bg-base rounded-xl"></div>
           </div>
-          <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50"></div>
+          <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50 px-8 py-2 flex flex-col gap-2">
+            <section className="w-full h-12 bg-red-400"></section>
+            <section className="w-full flex-grow bg-yellow-400"></section>
+          </div>
         </div>
       </div>
       <div
