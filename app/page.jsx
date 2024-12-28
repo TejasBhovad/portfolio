@@ -22,18 +22,18 @@ const TextBox = memo(() => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-8">
+    <div className="w-full flex flex-col gap-2">
       <motion.span
-        className="text-baseColor h-16 text-3xl sm:text-6xl font-bold w-full text-center"
+        className="text-baseColor h-16 text-3xl sm:text-4xl md:text-5xl font-bold w-full text-center"
         variants={variants}
         initial="hidden"
         animate="visible"
-        transition={{ duration: 0.1, ease: "easeInOut" }} // Reduced duration
+        transition={{ duration: 0.1, ease: "easeInOut" }}
       >
         Hey, I'm Tejas!
       </motion.span>
       <motion.span
-        className="text-muted text-xl text-center w-full items-center justify-center flex gap-2"
+        className="text-muted text-md sm:text-xl text-center w-full items-center justify-center flex sm:gap-2 gap-1"
         variants={variants}
         initial="hidden"
         animate="visible"
@@ -143,7 +143,17 @@ const Page = () => {
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center h-full ">
           <div className="w-full h-2/3 md:h-4/5 p-8 bg-green-400/0">
             <div className="w-full h-full bg-base rounded-xl">
-              <NavbarWrapper></NavbarWrapper>
+              <NavbarWrapper>
+                <div className="w-full h-auto flex items-center justify-center">
+                  <div className="aspect-square bg-red-300 w-48 sm:w-60 md:w-96"></div>
+                </div>
+
+                {/* <ModelDisplay /> */}
+                <div className="w-full gap-8 flex flex-col py-4 px-4">
+                  <TextBox />
+                  <SocialLinks />
+                </div>
+              </NavbarWrapper>
             </div>
           </div>
           <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50 px-8 py-2 flex flex-col gap-2">

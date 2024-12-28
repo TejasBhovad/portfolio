@@ -9,25 +9,25 @@ const SocialLinks = () => {
   const socialLinks = [
     {
       name: "Resume",
-      background: "bg-twitter-muted",
+      background: "bg-muted/10",
       text: "text-muted",
-      url: "https://x.com/tejas_bhovad",
-      hover: "hover:bg-twitter-muted/80",
-      logo: <Resume color="fill-red-700" />,
+      url: "/resume.pdf",
+      hover: "hover:bg-muted/20",
+      logo: <Resume />,
     },
     {
       name: "GitHub",
-      background: "bg-github-muted",
-      hover: "hover:bg-github-muted/80",
-      text: "text-github-base",
+      background: "bg-muted/10",
+      text: "text-muted",
+      hover: "hover:bg-muted/20",
       url: "https://github.com/TejasBhovad",
       logo: <GitHub />,
     },
     {
       name: "YouTube",
-      background: "bg-youtube-muted",
-      hover: "hover:bg-youtube-muted/80",
-      text: "text-youtube-base",
+      background: "bg-muted/10",
+      text: "text-muted",
+      hover: "hover:bg-muted/20",
       url: "https://www.youtube.com/@tejasbhovad",
       logo: <YouTube />,
     },
@@ -48,7 +48,7 @@ const SocialLinks = () => {
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <Button
               key={index}

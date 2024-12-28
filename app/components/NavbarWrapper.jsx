@@ -99,7 +99,7 @@ function Navbar() {
 
   return (
     <motion.nav
-      className="w-full h-14 flex px-6 py-2 items-center bg-base z-20 rounded-t-xl"
+      className="w-full h-14 flex p-6 py-8 items-center bg-base z-20 rounded-t-xl"
       ref={clickScope}
       variants={{
         visible: { y: 0 },
@@ -172,7 +172,9 @@ const NavbarWrapper = ({ children }) => {
   return (
     <div suppressHydrationWarning className="w-full h-full">
       <Navbar />
-      <main className="w-full h-full pt-14">{children}</main>
+      <main className="w-full h-full flex flex-col lg:py-8 justify-start items-center">
+        {children}
+      </main>
     </div>
   );
 };

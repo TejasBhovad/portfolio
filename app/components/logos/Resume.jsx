@@ -10,7 +10,7 @@ function Resume() {
       viewBox="0 0 34 40"
     >
       <path
-        className="stroke-muted/70 transition-colors duration-200 ease-in-out"
+        className="stroke-muted transition-colors duration-200 ease-in-out"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="4"
