@@ -99,7 +99,7 @@ function Navbar() {
 
   return (
     <motion.nav
-      className="fixed w-full h-14 flex px-6 py-2 items-center bg-base z-20"
+      className="w-full h-14 flex px-6 py-2 items-center bg-base z-20 rounded-t-xl"
       ref={clickScope}
       variants={{
         visible: { y: 0 },

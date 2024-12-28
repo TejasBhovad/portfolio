@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Footer from "@/app/components/Footer";
+// import NavbarWrapper from "./components/NavbarWrapper";
 import projects from "@/public/data/projects.json";
 import SocialLinks from "@/app/components/SocialLinks";
 import ModelDisplay from "@/components/ModelDisplay";
@@ -134,14 +135,16 @@ const Page = () => {
           </div>
         </div> */}
       <div
-        className="w-full aspect-[3/4] gradient-div "
+        className="w-full aspect-[1/2] sm:aspect-[3/4] gradient-div "
         style={{
           maxHeight: "1080px",
         }}
       >
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center h-full ">
           <div className="w-full h-2/3 md:h-4/5 p-8 bg-green-400/0">
-            <div className="w-full h-full bg-base rounded-xl"></div>
+            <div className="w-full h-full bg-base rounded-xl">
+              <NavbarWrapper></NavbarWrapper>
+            </div>
           </div>
           <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50 px-8 py-2 flex flex-col gap-2">
             <section className="w-full h-12 bg-red-400"></section>
