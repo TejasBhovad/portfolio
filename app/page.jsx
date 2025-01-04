@@ -17,6 +17,7 @@ import Image from "next/image";
 import Pin from "./components/logos/Pin";
 import { useState, useEffect, memo, Suspense } from "react";
 import ContactForm from "./components/ContactForm";
+import LocationPin from "@/components/location-pin";
 import NavbarWrapper from "./components/NavbarWrapper";
 const TextBox = memo(() => {
   const variants = {
@@ -43,10 +44,11 @@ const TextBox = memo(() => {
         transition={{ duration: 0.2, ease: "easeInOut" }} // Reduced duration
       >
         Full Stack web developer based in
-        <span className="flex items-center gap-1">
+        {/* <span className="flex items-center gap-1">
           <Pin />
           India
-        </span>
+        </span> */}
+        <LocationPin />
       </motion.span>
     </div>
   );
