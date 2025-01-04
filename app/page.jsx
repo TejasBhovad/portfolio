@@ -1,4 +1,7 @@
 "use client";
+import TabCard from "@/components/tab-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { GraduationCap, BriefcaseBusiness } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Footer from "@/app/components/Footer";
@@ -60,7 +63,15 @@ const Page = () => {
   const handleClick = () => {
     router.push("/projects");
   };
-
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
   return (
     <div className="w-full h-auto mx-auto scroll-smooth">
       {/* <div
@@ -156,10 +167,60 @@ const Page = () => {
               </NavbarWrapper>
             </div>
           </div>
-          <div className="w-full h-1/3 md:h-1/5 bg-blue-300/50 px-8 py-2 flex flex-col gap-2">
-            <section className="w-full h-12 bg-red-400"></section>
-            <section className="w-full flex-grow bg-yellow-400"></section>
-          </div>
+
+          <Tabs
+            defaultValue="work"
+            className="w-full h-1/3 md:h-1/5  px-8 py-2 flex flex-col gap-2"
+          >
+            <TabsList className="w-fit bg-base/50 flex justify-start h-auto p-0 rounded-md">
+              <TabsTrigger
+                value="work"
+                className="px-4 py-2   text-lg data-[state=active]:bg-base data-[state=active]:text-text flex items-center justify-start gap-2"
+              >
+                <BriefcaseBusiness strokeWidth="2.25" />
+                Work
+              </TabsTrigger>
+              <TabsTrigger
+                value="education"
+                className="px-4 py-2 text-lg data-[state=active]:bg-base data-[state=active]:text-text flex items-center justify-start gap-2"
+              >
+                <GraduationCap strokeWidth="2.25" />
+                Education
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent
+              value="work"
+              className="w-full h-full flex flex-col md:flex-row gap-4 items-start justify-start py-2 data-[state=inactive]:hidden"
+            >
+              <TabCard
+                image="/logos/podium.jpg"
+                name="Podium"
+                desc="Full Stack Developer"
+                fromData="July 2024"
+                toDate="August 2024"
+              />
+              <TabCard
+                image="/logos/minecraft.jpg"
+                name="Minecraft Modding"
+                desc="Freelance"
+                fromData="May 2021"
+                toDate="May 2022"
+              />
+            </TabsContent>
+            <TabsContent
+              value="education"
+              className="w-full h-full flex flex-col md:flex-row gap-4 items-start justify-start py-2"
+            >
+              <TabCard
+                image="/logos/podium.jpg"
+                name="B.Tech in AI-DS"
+                desc="Ramrao Adik Institute of Technology"
+                fromData="June 2022"
+                toDate="June 2026"
+              />
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
       <div
