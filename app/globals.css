@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --soundxlr-from: 266 100% 88%;
+    --soundxlr-to: 300 66% 92%;
     --color-text-base: 54, 51, 51;
     --color-text-muted: 107, 129, 137;
     --color-background-base: 255, 255, 255;
@@ -74,6 +76,8 @@
     }
   }
   [data-theme="dark"] {
+    --soundxlr-from: 266 60% 43%;
+    --soundxlr-to: 0 0% 11%;
     --color-text-base: 255, 255, 255;
     --color-text-muted: 141, 156, 168;
     --color-background-base: 36, 39, 41;
@@ -82,7 +86,6 @@
     --color-toggle-base: 255, 255, 255;
     --color-toggle-hover: 51, 57, 61;
     --color-toggle-muted: 61, 68, 72;
-
     --color-twitter-muted: 69, 79, 85;
     --color-twitter-base: 101, 167, 188;
     --color-youtube-muted: 78, 60, 60;

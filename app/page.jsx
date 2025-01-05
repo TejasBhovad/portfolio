@@ -1,11 +1,12 @@
 "use client";
+import { SiNextdotjs, SiHuggingface } from "react-icons/si";
 import TabCard from "@/components/tab-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GraduationCap, BriefcaseBusiness } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Footer from "@/app/components/Footer";
-// import NavbarWrapper from "./components/NavbarWrapper";
+import GradientCard from "@/components/gradient-card";
 import projects from "@/public/data/projects.json";
 import SocialLinks from "@/app/components/SocialLinks";
 import ModelDisplay from "@/components/ModelDisplay";
@@ -172,7 +173,7 @@ const Page = () => {
 
           <Tabs
             defaultValue="work"
-            className="w-full h-1/3 md:h-1/5  px-8 py-2 flex flex-col gap-2"
+            className="w-full h-3/5 md:h-1/4 py-8  px-8 flex flex-col gap-2"
           >
             <TabsList className="w-fit bg-base/50 flex justify-start h-auto p-0 rounded-md">
               <TabsTrigger
@@ -226,11 +227,56 @@ const Page = () => {
         </div>
       </div>
       <div
-        className="w-full aspect-[3/2] bg-purple-300"
-        style={{
-          maxHeight: "480px",
-        }}
-      ></div>
+        className="w-full  bg-base   h-auto"
+        style={
+          {
+            // maxHeight: "480px",
+          }
+        }
+      >
+        <div className="max-w-7xl  mx-auto w-full flex flex-col gap-4 items-start justify-start h-auto px-8 py-4">
+          <section className="w-full h-fit flex flex-col gap-1 sm:gap-2  ">
+            <span className="w-full h-auto justify-start text-xl sm:text-2xl lg:text-4xl font-bold">
+              Projects
+            </span>
+            <span className="w-full h-auto justify-start text-muted text-md sm:text-lg font-regular">
+              Things I have worked on
+            </span>
+          </section>
+          <div className="w-full h-auto flex-col md:flex-row flex gap-4 ">
+            <GradientCard
+              title="SoundXLR Soundboard"
+              imageTitle="SoundXLR Screenshot"
+              projectImage="/images/soundxlr.jpeg"
+              techUsed={[
+                {
+                  name: "Next.js",
+                  icon: <SiNextdotjs className="h-4 w-4" />,
+                },
+                {
+                  name: "Hugging Face",
+                  icon: <SiHuggingface className="h-4 w-4" />,
+                },
+              ]}
+            />
+            <GradientCard
+              title="SoundXLR Soundboard"
+              imageTitle="SoundXLR Screenshot"
+              projectImage="/images/soundxlr.jpeg"
+              techUsed={[
+                {
+                  name: "Next.js",
+                  icon: <SiNextdotjs className="h-4 w-4" />,
+                },
+                {
+                  name: "Hugging Face",
+                  icon: <SiHuggingface className="h-4 w-4" />,
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </div>
       <div
         className="w-full aspect-[2/1] bg-orange-300"
         style={{
