@@ -38,7 +38,7 @@ const TextBox = memo(() => {
         Hey, I'm Tejas!
       </motion.span>
       <motion.span
-        className="text-muted text-md sm:text-xl text-center w-full items-center justify-center flex sm:gap-2 gap-1"
+        className="text-muted flex-col sm:flex-row text-md sm:text-xl text-center w-full items-center justify-center flex sm:gap-2 gap-1"
         variants={variants}
         initial="hidden"
         animate="visible"
@@ -149,7 +149,7 @@ const Page = () => {
           </div>
         </div> */}
       <div
-        className="w-full aspect-[1/2] sm:aspect-[3/4] gradient-div "
+        className="w-full aspect-auto sm:aspect-[3/4] gradient-div "
         style={{
           maxHeight: "1080px",
         }}
