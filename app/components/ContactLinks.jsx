@@ -1,33 +1,39 @@
 import React from "react";
 import Link from "next/link";
-import LinkedIn from "./logos/LinkedIn";
-import Mail from "./logos/Mail";
-import Resume from "./logos/Resume";
+import { FileText, Mail, Github, Linkedin } from "lucide-react";
+
 const ContactLinks = () => {
   const links = [
     {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/tejas-bhovad/",
-      logo: <LinkedIn />,
+      name: "Email",
+      url: "mailto:tejasbhovad@gmail.com",
+      logo: <Mail size={24} />,
     },
     {
-      name: "Email",
-      url: "mailto:code.tejas@gmail.com",
-      logo: <Mail />,
+      name: "GitHub",
+      url: "https://github.com/tejasbhovad",
+      logo: <Github size={24} />,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/tejasbhovad",
+      logo: <Linkedin size={24} />,
     },
     {
       name: "Resume",
       url: "https://www.tejasbhovad.com/resume.pdf",
-      logo: <Resume />,
+      logo: <FileText size={24} />,
     },
   ];
+
   return (
     <div className="flex gap-1 px-4 items-center justify-center">
-      {links.map((link, index) => (
+      {links.map((link) => (
         <Link
-          key={index}
+          key={link.name}
           href={link.url}
-          className="hover:bg-muted/30 p-2 rounded-full transition-colors duration-200 ease-in-out"
+          className="hover:bg-muted/20 p-2 rounded-full transition-colors text-muted duration-200 ease-in-out"
+          aria-label={`Link to ${link.name}`}
         >
           {link.logo}
         </Link>

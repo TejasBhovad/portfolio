@@ -49,7 +49,7 @@ const ContactForm = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={(isOpen) => setIsOpen(isOpen)}>
-      <DialogTrigger className="bg-inverted text-inverted px-6 rounded-sm text-lg font-semibold py-1 transition-all duration-300 hover:scale-[99.05%] active:scale-100">
+      <DialogTrigger className="bg-inverted text-inverted px-6 rounded-sm text-lg font-semibold py-1 transition-all ">
         Send a note
       </DialogTrigger>
       <DialogContent>
