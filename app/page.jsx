@@ -45,10 +45,6 @@ const TextBox = memo(() => {
         transition={{ duration: 0.2, ease: "easeInOut" }} // Reduced duration
       >
         Full Stack web developer based in
-        {/* <span className="flex items-center gap-1">
-          <Pin />
-          India
-        </span> */}
         <LocationPin />
       </motion.span>
     </div>
@@ -227,14 +223,14 @@ const Page = () => {
         </div>
       </div>
       <div
-        className="w-full  bg-base   h-auto"
+        className="w-full bg-background  h-auto"
         style={
           {
             // maxHeight: "480px",
           }
         }
       >
-        <div className="max-w-7xl  mx-auto w-full flex flex-col gap-4 items-start justify-start h-auto px-8 py-4">
+        <div className="max-w-7xl mx-auto w-full flex flex-col gap-4 items-start justify-start h-auto px-8 py-4">
           <section className="w-full h-fit flex flex-col gap-1 sm:gap-2  ">
             <span className="w-full h-auto justify-start text-xl sm:text-2xl lg:text-4xl font-bold">
               Projects
@@ -276,6 +272,17 @@ const Page = () => {
             />
           </div>
         </div>
+        <section className="w-full h-auto flex flex-col items-center justify-center gap-2 py-6">
+          <span>Looking for more?</span>
+          <Button
+            variant="primary"
+            size="large"
+            className="bg-inverted text-inverted px-6 rounded-md text-xl sm:font-semibold py-1 transition-all duration-300"
+            onClick={handleClick}
+          >
+            Explore More
+          </Button>
+        </section>
       </div>
       <div
         className="w-full aspect-[2/1] bg-orange-300"

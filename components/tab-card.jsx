@@ -28,7 +28,6 @@ const TabCard = ({ image, name, desc, fromData, toDate }) => {
           height={36}
           src={image}
           alt={name}
-          layout="cover"
           className="w-full object-cover h-full aspect-square rounded-lg"
         />
       </motion.div>
