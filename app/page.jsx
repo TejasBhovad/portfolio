@@ -212,6 +212,7 @@ const Page = () => {
               className="w-full h-full flex flex-col md:flex-row gap-4 items-start justify-start py-2"
             >
               <TabCard
+                type="education"
                 image="/logos/podium.jpg"
                 name="B.Tech in AI-DS"
                 desc="Ramrao Adik Institute of Technology"

@@ -2,7 +2,15 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const TabCard = ({ image, name, desc, fromData, toDate }) => {
+const TabCard = ({ image, name, desc, fromData, toDate, type }) => {
+  const baseClass =
+    "flex gap-4 bg-base overflow-hidden shadow-md p-4 rounded-xl";
+
+  const widthClass =
+    type === "education" ? "w-full" : "md:w-1/2 w-full md:h-full h-24";
+
+  const className = `${baseClass} ${widthClass}`;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -11,7 +19,7 @@ const TabCard = ({ image, name, desc, fromData, toDate }) => {
         duration: 0.4,
         ease: [0.22, 1, 0.36, 1], // Smooth bezier curve
       }}
-      className="flex gap-4 bg-base overflow-hidden shadow-md md:w-1/2 w-full md:h-full h-24 p-4 rounded-xl"
+      className={className}
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
@@ -21,7 +29,7 @@ const TabCard = ({ image, name, desc, fromData, toDate }) => {
           duration: 0.3,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="aspect-square md:h-full h-16"
+        className="aspect-square md:h-24 h-16"
       >
         <Image
           width={36}
