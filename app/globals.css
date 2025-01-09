@@ -100,7 +100,7 @@
     }
   }
   [data-theme="dark"] {
-    --background: 0 0% 9%;
+    --background: 0 0% 7%;
     --soundxlr-from: 266 60% 43%;
     --soundxlr-to: 0 0% 11%;
     --color-text-base: 255, 255, 255;
@@ -145,7 +145,7 @@
       background: -moz-linear-gradient(
         90deg,
         #272727 0%,
-        #13212f 36%,
+        #0a2035 36%,
         #272727 100%
       );
       background: -webkit-linear-gradient(
