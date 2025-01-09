@@ -12,11 +12,11 @@ const Page = () => {
     <NavbarWrapper type="top">
       <div className="w-full gradient-project h-auto sm:h-full pt-16">
         <div className="max-w-7xl  mx-auto sm:h-full w-full px-9 py-2  flex flex-col gap-8">
-          <section className="flex flex-col  gap-2 w-full sm:h-full justify-start">
+          <section className="flex flex-col  gap-2 w-full sm:h-auto justify-start">
             <span className="w-full h-auto justify-start text-2xl sm:text-3xl lg:text-4xl font-bold">
               Projects
             </span>
-            <span className="w-full h-auto justify-start text-muted-foreground text-sm sm:text-md lg:text-lg">
+            <span className="w-full h-fit justify-start text-muted-foreground text-sm sm:text-md lg:text-lg">
               I worked on several projects over the years, here are the ones I
               am proud of.
               <span className="hidden sm:inline">
