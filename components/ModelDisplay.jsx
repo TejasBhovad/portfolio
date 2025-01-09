@@ -11,7 +11,7 @@ const MemoizedRingSpheres = memo(RingSpheres);
 
 const Title = memo(() => (
   <motion.h1
-    className="transition-all absolute z-10 font-black text-white text-7xl sm:text-8xl select-none"
+    className="transition-all absolute z-10 font-black text-white text-4xl sm:text-7xl select-none"
     initial={{ opacity: 0, y: 0 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1.75, ease: "easeInOut" }}

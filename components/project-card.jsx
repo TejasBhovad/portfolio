@@ -11,7 +11,7 @@ export function ProjectCard({ title, description, image, link }) {
       rel="noopener noreferrer"
       className="block"
     >
-      <Card className="group bg-base text-text border-0 overflow-hidden shadow-sm hover:shadow-md hover:shadow-primary/20 transition-all">
+      <Card className="group bg-background  text-text border-0 overflow-hidden shadow-sm hover:shadow-md hover:shadow-primary/20 transition-all">
         <CardHeader className="flex flex-row items-center gap-4 space-y-0">
           <div className="h-full aspect-square overflow-hidden rounded-sm">
             <Image

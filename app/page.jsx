@@ -155,7 +155,9 @@ const Page = () => {
             <div className="w-full h-full bg-base rounded-xl">
               <NavbarWrapper>
                 <div className="w-full h-auto flex items-center justify-center">
-                  <div className="aspect-square bg-red-300 w-48 sm:w-60 md:w-96"></div>
+                  <div className="aspect-square bg-red-300/0 w-48 sm:w-60 md:w-96">
+                    <ModelDisplay />
+                  </div>
                 </div>
 
                 {/* <ModelDisplay /> */}

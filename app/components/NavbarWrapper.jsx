@@ -99,7 +99,7 @@ function Navbar({ type }) {
 
   return (
     <motion.nav
-      className={`w-full h-14 flex p-6 py-8 items-center bg-base z-20 ${
+      className={`w-full h-14 flex p-6 py-8 items-center bg-base z-60 ${
         type === "top" ? "absolute" : "rounded-t-xl"
       }`}
       ref={clickScope}
@@ -128,7 +128,7 @@ function Navbar({ type }) {
             <MenuLogo />
           </motion.button>
           <div
-            className="absolute top-12 rounded-md bg-foreground shadow-sm border-[1px] border-muted/20"
+            className="absolute top-12 rounded-md bg-foreground shadow-sm border-[1px] border-muted/20 z-40"
             ref={scope}
             variants={{
               visible: { opacity: 1 },
