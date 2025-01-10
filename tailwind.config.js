@@ -48,6 +48,10 @@ module.exports = {
           from: "hsl(var(--soundxlr-from))",
           to: "hsl(var(--soundxlr-to))",
         },
+        cohesion: {
+          from: "hsl(var(--cohesion-from))",
+          to: "hsl(var(--cohesion-to))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

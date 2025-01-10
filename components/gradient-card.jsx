@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-
+import Link from "next/link";
 function GradientCard({
   title,
   imageTitle,
@@ -12,13 +12,17 @@ function GradientCard({
     from: "from-soundxlr-from",
     to: "to-soundxlr-to",
   },
+  url,
 }) {
   return (
     <motion.div className="h-fit w-full">
-      <div
-        className={`flex shadow-md flex-col h-full bg-gradient-to-bl ${gradient.from} ${gradient.to} dark:bg-gradient-to-bl backdrop-blur-sm rounded-[11px] p-3`}
+      <Link
+        href={url}
+        referrerPolicy="no-referrer"
+        target="_blank"
+        className={`flex shadow-md flex-col h-full bg-gradient-to-bl ${gradient.from} ${gradient.to} dark:bg-gradient-to-bl backdrop-blur-sm rounded-lg p-3`}
       >
-        <div className="relative aspect-video overflow-hidden rounded-lg bg-muted">
+        <div className="relative aspect-video overflow-hidden rounded-md bg-muted">
           <motion.img
             src={projectImage}
             alt={imageTitle}
@@ -36,7 +40,7 @@ function GradientCard({
             {techUsed.map((tech, index) => (
               <motion.div
                 key={index}
-                className="flex items-center select-none gap-1.5 rounded-full bg-base dark:bg-gray-800 backdrop-blur-sm px-3 py-1 text-sm"
+                className="flex items-center select-none gap-1.5 rounded-full bg-background backdrop-blur-sm px-3 py-1 text-sm"
                 whileHover={{ scale: 1.025 }}
                 transition={{ duration: 0.2 }}
               >
@@ -46,7 +50,7 @@ function GradientCard({
             ))}
           </div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }

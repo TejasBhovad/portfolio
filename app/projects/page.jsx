@@ -29,7 +29,6 @@ const Page = () => {
 
           {webProjects.length > 0 && (
             <section className="flex flex-col gap-4 ">
-              <h2 className="text-xl font-semibold">Web Projects</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {webProjects.map((project) => (
                   <ProjectCard
@@ -54,7 +53,7 @@ const Page = () => {
                     title={project.projectName}
                     description={project.projectDescription}
                     image={project.imageName}
-                    link={project.githubLink}
+                    link={project.liveLink || project.githubLink}
                   />
                 ))}
               </div>

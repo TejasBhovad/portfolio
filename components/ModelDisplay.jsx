@@ -78,7 +78,7 @@ const ModelDisplay = () => {
 
   return (
     <motion.div
-      className="bg-base w-full h-full flex items-center justify-center"
+      className="bg-foreground w-full h-full flex items-center justify-center"
       initial={{ opacity: 0, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.25, ease: "easeInOut" }}

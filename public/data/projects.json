@@ -1,5 +1,15 @@
 [
   {
+    "id": 10,
+    "type": "web",
+    "projectName": "Cohesion",
+    "imageName": "cohesionl.png",
+    "projectDescription": "Create Connection styled games",
+    "featured": false,
+    "liveLink": "https://cohesion-game.vercel.app/",
+    "githubLink": "https://github.com/SiddharthSahani/cohesion"
+  },
+  {
     "id": 1,
     "type": "web",
     "projectName": "SoundXLR",
@@ -9,6 +19,16 @@
     "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
     "liveLink": "https://soundxlr.vercel.app/",
     "githubLink": "https://github.com/TejasBhovad/soundboard"
+  },
+  {
+    "id": 11,
+    "type": "web",
+    "projectName": "Uni Notes",
+    "imageName": "notes.png",
+    "projectDescription": "Notes Directory for University students",
+    "featured": false,
+    "liveLink": "https://dypatil.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/notes"
   },
   {
     "id": 2,
@@ -46,7 +66,7 @@
     "id": 5,
     "type": "other",
     "projectName": "Snippet Manager",
-    "imageName": "snippet.jpeg",
+    "imageName": "snippet.png",
     "projectDescription": "Made using Rust and TauriJS",
     "featured": false,
     "githubLink": "https://github.com/TejasBhovad/snippet-manager"
@@ -84,7 +104,7 @@
     "id": 9,
     "type": "web",
     "projectName": "AI Battles",
-    "imageName": "battlesim.jpeg",
+    "imageName": "battlesim.png",
     "projectDescription": "AI based Castle Siege game",
     "featured": false,
     "liveLink": "https://aibattles.vercel.app/",

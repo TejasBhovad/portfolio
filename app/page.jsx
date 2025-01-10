@@ -1,5 +1,8 @@
 "use client";
-import { SiNextdotjs, SiHuggingface } from "react-icons/si";
+import { SiNextdotjs, SiAppwrite } from "react-icons/si";
+import { RiSvelteFill } from "react-icons/ri";
+import { DiRedis } from "react-icons/di";
+
 import TabCard from "@/components/tab-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GraduationCap, BriefcaseBusiness } from "lucide-react";
@@ -152,7 +155,7 @@ const Page = () => {
       >
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center h-full ">
           <div className="w-full h-2/3 md:h-4/5 p-8 bg-green-400/0">
-            <div className="w-full h-full bg-base rounded-xl">
+            <div className="w-full h-full bg-foreground rounded-xl">
               <NavbarWrapper>
                 <div className="w-full h-auto flex items-center justify-center">
                   <div className="aspect-square bg-red-300/0 w-48 sm:w-60 md:w-96">
@@ -173,7 +176,7 @@ const Page = () => {
             defaultValue="work"
             className="w-full h-3/5 md:h-1/4 py-8  px-8 flex flex-col gap-2"
           >
-            <TabsList className="w-fit bg-base/50 flex justify-start h-auto p-0 rounded-md">
+            <TabsList className="w-fit bg-foreground/50 flex justify-start h-auto p-0 rounded-md">
               <TabsTrigger
                 value="work"
                 className="px-4 py-2   text-lg data-[state=active]:bg-base data-[state=active]:text-text flex items-center justify-start gap-2"
@@ -215,7 +218,7 @@ const Page = () => {
             >
               <TabCard
                 type="education"
-                image="/logos/podium.jpg"
+                image="/logos/dypatil.jpg"
                 name="B.Tech in AI-DS"
                 desc="Ramrao Adik Institute of Technology"
                 fromData="June 2022"
@@ -244,8 +247,12 @@ const Page = () => {
           </section>
           <div className="w-full h-auto flex-col md:flex-row flex gap-4 ">
             <GradientCard
+              url="https://github.com/TejasBhovad/soundboard"
+              gradient={{
+                from: "from-soundxlr-from",
+                to: "to-soundxlr-to",
+              }}
               title="SoundXLR Soundboard"
-              imageTitle="SoundXLR Screenshot"
               projectImage="/images/soundxlr.jpeg"
               techUsed={[
                 {
@@ -253,23 +260,27 @@ const Page = () => {
                   icon: <SiNextdotjs className="h-4 w-4" />,
                 },
                 {
-                  name: "Hugging Face",
-                  icon: <SiHuggingface className="h-4 w-4" />,
+                  name: "Appwrite",
+                  icon: <SiAppwrite className="h-4 w-4" />,
                 },
               ]}
             />
             <GradientCard
-              title="SoundXLR Soundboard"
-              imageTitle="SoundXLR Screenshot"
-              projectImage="/images/soundxlr.jpeg"
+              url="https://github.com/SiddharthSahani/cohesion"
+              gradient={{
+                from: "from-cohesion-from",
+                to: "to-cohesion-to",
+              }}
+              title="Cohesion Game"
+              projectImage="/images/cohesion.png"
               techUsed={[
                 {
-                  name: "Next.js",
-                  icon: <SiNextdotjs className="h-4 w-4" />,
+                  name: "SvelteKit",
+                  icon: <RiSvelteFill className="h-4 w-4" />,
                 },
                 {
-                  name: "Hugging Face",
-                  icon: <SiHuggingface className="h-4 w-4" />,
+                  name: "Redis",
+                  icon: <DiRedis className="h-4 w-4" />,
                 },
               ]}
             />
@@ -296,7 +307,7 @@ const Page = () => {
         {" "}
         <div className="h-auto w-full  gradient-div p-8 flex items-center justify-center">
           <div className="flex flex-col w-full gap-6 max-w-7xl">
-            <div className="w-full h-full bg-foreground rounded-2xl border-[1.5px] border-muted/30 shadow-md p-8 flex flex-col gap-5">
+            <div className="w-full h-full bg-foreground rounded-2xl  shadow-md p-8 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <span className="text-2xl font-semibold text-center sm:text-left">
                   Want to work together?

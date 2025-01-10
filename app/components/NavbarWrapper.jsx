@@ -1,5 +1,5 @@
 "use client";
-import { Suspense } from "react";
+
 import MenuLogo from "@/app/components/MenuLogo";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -99,8 +99,10 @@ function Navbar({ type }) {
 
   return (
     <motion.nav
-      className={`w-full h-14 flex p-6 py-8 items-center bg-base z-60 ${
-        type === "top" ? "absolute" : "rounded-t-xl"
+      className={`w-full h-14 flex p-6 py-8 items-center z-60 ${
+        type === "top"
+          ? "absolute bg-background"
+          : "rounded-t-xl  bg-foreground"
       }`}
       ref={clickScope}
       variants={{

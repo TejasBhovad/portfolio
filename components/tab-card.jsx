@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const TabCard = ({ image, name, desc, fromData, toDate, type }) => {
   const baseClass =
-    "flex gap-4 bg-base overflow-hidden shadow-md p-4 rounded-xl";
+    "flex gap-4 bg-foreground overflow-hidden shadow-md p-4 rounded-xl";
 
   const widthClass =
     type === "education" ? "w-full" : "md:w-1/2 w-full md:h-full h-24";
@@ -25,18 +25,19 @@ const TabCard = ({ image, name, desc, fromData, toDate, type }) => {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{
-          delay: 0.1,
+          delay: 0,
           duration: 0.3,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="aspect-square md:h-24 h-16"
       >
         <Image
-          width={36}
-          height={36}
+          width={512}
+          quality={90}
+          height={512}
           src={image}
           alt={name}
-          className="w-full object-cover h-full aspect-square rounded-lg"
+          className="w-full object-cover h-full rounded-lg"
         />
       </motion.div>
       <motion.div
