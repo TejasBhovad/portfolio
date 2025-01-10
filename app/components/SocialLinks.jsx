@@ -4,29 +4,25 @@ import Twitter from "./logos/Twitter";
 import GitHub from "./logos/GitHub";
 import YouTube from "./logos/YouTube";
 import { motion } from "framer-motion";
+import Resume from "./logos/Resume";
+import SlideButton from "./slide-button";
 const SocialLinks = () => {
   const socialLinks = [
     {
-      name: "Twitter",
-      background: "bg-twitter-muted",
-      text: "text-twitter-base",
-      url: "https://x.com/tejas_bhovad",
-      hover: "hover:bg-twitter-muted/80",
-      logo: <Twitter color="fill-red-700" />,
+      name: "Resume",
+      text: "View",
+      url: "/resume.pdf",
+      logo: <Resume />,
     },
     {
       name: "GitHub",
-      background: "bg-github-muted",
-      hover: "hover:bg-github-muted/80",
-      text: "text-github-base",
+      text: "Follow",
       url: "https://github.com/TejasBhovad",
       logo: <GitHub />,
     },
     {
       name: "YouTube",
-      background: "bg-youtube-muted",
-      hover: "hover:bg-youtube-muted/80",
-      text: "text-youtube-base",
+      text: "Subscribe",
       url: "https://www.youtube.com/@tejasbhovad",
       logo: <YouTube />,
     },
@@ -47,16 +43,18 @@ const SocialLinks = () => {
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <Button
+            <SlideButton
+              text={link.text}
+              variant="default"
               key={index}
               onClick={() => handleClick(link.url)}
-              className={`rounded-sm text-lg gap-2 ${link.background} ${link.text} ${link.hover}`}
+              className={`w-32 h-10 rounded-sm text-lg gap-2 text-muted ${link.background} ${link.text} ${link.hover}`}
             >
               {link.logo}
               {link.name}
-            </Button>
+            </SlideButton>
           </motion.div>
         ))}
       </div>
@@ -72,16 +70,18 @@ const SocialLinks = () => {
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <Button
+            <SlideButton
+              text={link.text}
+              variant="default"
               key={index}
               onClick={() => handleClick(link.url)}
-              className={`rounded-sm text-lg gap-2 ${link.background} ${link.text} ${link.hover}`}
+              className={`w-32 h-10 rounded-sm text-lg gap-2 text-muted ${link.background} ${link.text} ${link.hover}`}
             >
               {link.logo}
               {link.name}
-            </Button>
+            </SlideButton>
           </motion.div>
         ))}
       </div>
@@ -97,16 +97,18 @@ const SocialLinks = () => {
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <Button
+            <SlideButton
+              text={link.text}
+              variant="default"
               key={index}
               onClick={() => handleClick(link.url)}
-              className={`rounded-sm text-lg gap-2 ${link.background} ${link.text} ${link.hover}`}
+              className={`w-32 h-10 rounded-sm text-lg gap-2 text-muted ${link.background} ${link.text} ${link.hover}`}
             >
               {link.logo}
               {link.name}
-            </Button>
+            </SlideButton>
           </motion.div>
         ))}
       </div>

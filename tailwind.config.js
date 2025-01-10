@@ -26,6 +26,9 @@ module.exports = {
       },
     },
     extend: {
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
       textColor: {
         baseColor: withOpacity("--color-text-base"),
         muted: withOpacity("--color-text-muted"),
@@ -41,27 +44,14 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-
-        twitter: {
-          base: withOpacity("--color-twitter-base"),
-          muted: withOpacity("--color-twitter-muted"),
+        soundxlr: {
+          from: "hsl(var(--soundxlr-from))",
+          to: "hsl(var(--soundxlr-to))",
         },
-        github: {
-          base: withOpacity("--color-github-base"),
-          muted: withOpacity("--color-github-muted"),
+        cohesion: {
+          from: "hsl(var(--cohesion-from))",
+          to: "hsl(var(--cohesion-to))",
         },
-        youtube: {
-          base: withOpacity("--color-youtube-base"),
-          muted: withOpacity("--color-youtube-muted"),
-        },
-        // primary: {
-        //   DEFAULT: "hsl(var(--primary))",
-        //   foreground: "hsl(var(--primary-foreground))",
-        // },
-        // secondary: {
-        //   DEFAULT: "hsl(var(--secondary))",
-        //   foreground: "hsl(var(--secondary-foreground))",
-        // },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

@@ -1,37 +1,28 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import { moon, sun } from "./Logos";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { getIndex, useFlubber } from "./useFlubber";
 
 const paths = [moon, sun];
 const colors = ["#000", "#fff"];
 
 const SwitchModes = () => {
   const { theme, setTheme } = useTheme();
-
   const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
+    setLoading(false);
   }, []);
 
-  //  flubber content
-  const initialPathIndex = theme === "light" ? 0 : 1;
-  const [pathIndex, setPathIndex] = useState(initialPathIndex);
-  const progress = useMotionValue(pathIndex);
-  const fill = useTransform(progress, paths.map(getIndex), colors);
-  const path = useFlubber(progress, paths);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const initialPathIndex = theme === "light" ? 0 : 1;
-    setPathIndex(initialPathIndex);
-    setLoading(false);
-  }, [isMounted]);
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
 
-  // loading state
+  // Loading state
   if (loading) {
     return (
       <div>
@@ -53,49 +44,26 @@ const SwitchModes = () => {
     );
   }
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    // If the new theme is light, set path to heart (0), else set to star (1)
-    const newPathIndex = newTheme === "light" ? 0 : 1;
-    setPathIndex(newPathIndex);
-
-    // transition to the other path
-    const animation = animate(progress, newPathIndex, {
-      duration: 0.5,
-      ease: "easeInOut",
-    });
-
-    return () => animation.stop();
-  };
-
   return (
     <div>
       <button
         onClick={toggleTheme}
-        className="flex bg-toggleMuted p-2 rounded-full items-center justify-center text-toggle hover:bg-toggleHover transition-colors duration-300 ease-in-out"
+        className="flex bg-toggleMuted/50 p-2 rounded-full items-center justify-center text-toggle hover:bg-toggleHover transition-colors duration-300 ease-in-out"
       >
         <motion.svg
-          variants={{
-            hidden: { opacity: 0, scale: 0.75 },
-            visible: { opacity: 1, scale: 1 },
-          }}
-          initial="hidden"
-          animate="visible"
+          initial={{ opacity: 0, scale: 0.75, filter: "blur(4px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.35, ease: "easeInOut" }}
           width="24"
           height="24"
           className="w-full h-full flex items-center justify-center"
         >
-          {theme == "light" ? (
-            <g transform="translate(0 0) scale(1 1)">
-              <motion.path fill={fill} d={path} />
-            </g>
-          ) : (
-            <g transform="translate(0 0) scale(1 1 )">
-              <motion.path fill={fill} d={path} />
-            </g>
-          )}
+          <g transform="translate(0 0) scale(1 1)">
+            <motion.path
+              fill={theme === "light" ? colors[0] : colors[1]}
+              d={theme === "light" ? paths[0] : paths[1]}
+            />
+          </g>
         </motion.svg>
       </button>
     </div>

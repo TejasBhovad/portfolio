@@ -1,4 +1,5 @@
 "use client";
+
 import MenuLogo from "@/app/components/MenuLogo";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -12,7 +13,7 @@ import {
 } from "framer-motion";
 import SwitchModes from "@/app/components/SwitchModes";
 
-function Navbar() {
+function Navbar({ type }) {
   const [isMounted, setIsMounted] = useState(false);
 
   const clickScope = useRef(null);
@@ -20,18 +21,18 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [scope, animate] = useAnimate();
   const items = [
-    <Link href="/">
-      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
+    <Link href="/" key="home">
+      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5 text-baseColor">
         Home
       </Button>
     </Link>,
-    <Link href="/projects" className="">
-      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
+    <Link href="/projects" className="" key="projects">
+      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5 text-baseColor">
         Projects
       </Button>
     </Link>,
-    <Link href="/blog">
-      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
+    <Link href="/blog" key="blog">
+      <Button className="w-full text-lg font-semibold bg-transparent hover:bg-toggle/5 text-baseColor">
         Blog
       </Button>
     </Link>,
@@ -94,11 +95,15 @@ function Navbar() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [scope, menuButtonRef]); // added menuButtonRef to the dependency array
+  }, [scope, menuButtonRef]);
 
   return (
     <motion.nav
-      className="fixed w-full h-14 flex px-6 py-2 items-center bg-base z-20"
+      className={`w-full h-14 flex p-6 py-8 items-center z-60 ${
+        type === "top"
+          ? "absolute bg-background"
+          : "rounded-t-xl  bg-foreground"
+      }`}
       ref={clickScope}
       variants={{
         visible: { y: 0 },
@@ -110,7 +115,7 @@ function Navbar() {
       <ul className="w-full flex items-center gap-2 justify-between font-medium text-lg select-none">
         <li className="hidden sm:flex">
           <Link href="/">
-            <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
+            <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5 text-baseColor">
               Home
             </Button>
           </Link>
@@ -125,7 +130,7 @@ function Navbar() {
             <MenuLogo />
           </motion.button>
           <div
-            className="absolute top-12 rounded-md bg-foreground "
+            className="absolute top-12 rounded-md bg-foreground shadow-sm border-[1px] border-muted/20 z-40"
             ref={scope}
             variants={{
               visible: { opacity: 1 },
@@ -146,26 +151,19 @@ function Navbar() {
         <div className="flex gap-4 items-center">
           <li className="hidden sm:flex">
             <Link href="/projects">
-              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
+              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5 text-baseColor">
                 Projects
               </Button>
             </Link>
           </li>
           <li className="hidden sm:flex">
             <Link href="/blog">
-              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5  text-baseColor">
+              <Button className="text-lg font-semibold bg-transparent hover:bg-toggle/5 text-baseColor">
                 Blog
               </Button>
             </Link>
           </li>
-          <li
-            variants={{
-              visible: { opacity: 1 },
-              hidden: { opacity: 0 },
-            }}
-            animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
+          <li>
             <SwitchModes />
           </li>
         </div>
@@ -174,11 +172,13 @@ function Navbar() {
   );
 }
 
-const NavbarWrapper = ({ children }) => {
+const NavbarWrapper = ({ children, type }) => {
   return (
     <div suppressHydrationWarning className="w-full h-full">
-      <Navbar />
-      <main className="w-full h-full pt-14">{children}</main>
+      <Navbar type={type} />
+      <main className="w-full h-full flex flex-col lg:py-8 justify-start items-center">
+        {children}
+      </main>
     </div>
   );
 };

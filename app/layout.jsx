@@ -31,7 +31,10 @@ export default function Layout({ children }) {
       </head>
       <body className={inter.className}>
         <ThemeProvider>
-          <NavbarWrapper>{children}</NavbarWrapper> <Toaster />
+          {/* <NavbarWrapper> */}
+          {children}
+          {/* </NavbarWrapper>  */}
+          <Toaster />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
