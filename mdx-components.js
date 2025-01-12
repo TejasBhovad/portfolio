@@ -10,11 +10,19 @@ export function useMDXComponents(components) {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => (
       <h1
-        className="sm:text-4xl text-2xl font-bold text-baseColor
+        className="sm:text-4xl text-2xl font-bold w-full text-start text-baseColor
       "
       >
         {children}
       </h1>
+    ),
+    h2: ({ children }) => (
+      <h2
+        className="sm:text-3xl text-xl font-bold w-full text-start text-baseColor/75
+      "
+      >
+        {children}
+      </h2>
     ),
     img: (props) => (
       <Image
@@ -22,6 +30,10 @@ export function useMDXComponents(components) {
         style={{ width: "100%", height: "auto" }}
         {...props}
       />
+    ),
+    // bold
+    strong: ({ children }) => (
+      <strong className="font-bold text-baseColor">{children}</strong>
     ),
     ...components,
   };
