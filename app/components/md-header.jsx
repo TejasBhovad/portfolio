@@ -1,12 +1,26 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, GithubIcon } from "lucide-react";
-const MDHeader = ({ title, githubLink = null, liveLink = null }) => {
+const MDHeader = ({ title, githubLink = null, liveLink = null, logo }) => {
   return (
-    <section className="flex w-full h-auto justify-between flex-col sm:flex-row gap-2">
-      <h1 className="text-3xl w-auto sm:text-4xl lg:text-5xl font-bold text-baseColor">
-        {title}
-      </h1>
+    <section className="flex w-full h-auto justify-between   sm:items-center flex-col sm:flex-row gap-2">
+      <div className="w-auto h-10 flex gap-2">
+        <div className="h-full aspect-square">
+          <Image
+            src={`/images/soundxlr.png`}
+            alt={logo}
+            width={64}
+            height={64}
+            className="object-cover w-full h-full rounded-sm"
+          />
+        </div>
+
+        <h1 className="text-2xl w-auto sm:text-3xl lg:text-4xl font-bold text-baseColor">
+          {title}
+        </h1>
+      </div>
+
       <div className="w-auto h-fit flex gap-2">
         {githubLink && (
           <Link
