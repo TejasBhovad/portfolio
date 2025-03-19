@@ -1,3 +1,4 @@
+import MillionLint from "@million/lint";
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
 //   transpilePackages: ["three"],
@@ -19,4 +20,7 @@ const withMDX = createMDX({
 });
 
 // Merge MDX config with Next.js config
-export default withMDX(nextConfig);
+export default MillionLint.next({
+  enabled: true,
+  rsc: true,
+})(withMDX(nextConfig));

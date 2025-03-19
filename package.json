@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.3.3",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
+    "@million/lint": "^1.0.14",
     "@next/mdx": "^15.1.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
