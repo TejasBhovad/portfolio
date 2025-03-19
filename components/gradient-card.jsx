@@ -41,8 +41,8 @@ function GradientCard({
               <motion.div
                 key={index}
                 className="flex items-center select-none gap-1.5 rounded-full bg-background backdrop-blur-sm px-3 py-1 text-sm"
-                whileHover={{ scale: 1.025 }}
-                transition={{ duration: 0.2 }}
+                // whileHover={{ scale: 1.025 }}
+                // transition={{ duration: 0.2 }}
               >
                 {tech.icon}
                 <span>{tech.name}</span>
