@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 const page = () => {
   return (
-    <div className="w-full h-full flex gap-3 flex-col items-center justify-center text-center">
+    <div className="w-full h-screen flex gap-3 flex-col items-center justify-center text-center">
       <motion.span
         className="text-4xl font-semibold"
         variants={{
