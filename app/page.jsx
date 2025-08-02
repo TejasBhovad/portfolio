@@ -198,9 +198,16 @@ const Page = () => {
               className="w-full h-full flex flex-col md:flex-row gap-4 items-start justify-start py-2 data-[state=inactive]:hidden"
             >
               <TabCard
+                image="/logos/vigovia.png"
+                name="Vigovia"
+                desc="SDE(Intern)"
+                fromData="August 2025"
+                toDate="Present"
+              />
+              <TabCard
                 image="/logos/podium.jpg"
-                name="Podium"
-                desc="Full Stack Developer"
+                name="Oddmind Innovations"
+                desc="Full Stack Developer(Intern)"
                 fromData="July 2024"
                 toDate="August 2024"
               />
