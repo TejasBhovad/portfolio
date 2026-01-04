@@ -1,3 +1,4 @@
+@import "@fontsource/gabarito";
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -75,6 +76,7 @@
 }
 
 @theme inline {
+  --font-gabarito: "Gabarito Variable", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -112,12 +114,15 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-gabarito; /* Or hardcode if not using theme */
   }
+}
+
+* {
+  font-family: var(--font-gabarito);
 }

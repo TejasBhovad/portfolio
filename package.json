@@ -9,6 +9,7 @@
     "start": "waku start"
   },
   "dependencies": {
+    "@fontsource/gabarito": "^5.2.8",
     "react": "~19.2.3",
     "react-dom": "~19.2.3",
     "react-server-dom-webpack": "~19.2.3",
