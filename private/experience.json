@@ -1,0 +1,26 @@
+[
+  {
+    "title": "SDE Intern",
+    "company": "Vector Consulting Group",
+    "startDate": "January 2026",
+    "endDate": "Present",
+    "logo": "vector.jpeg",
+    "link": "https://in.linkedin.com/company/vector-consulting-group"
+  },
+  {
+    "title": "Full Stack Engineer Intern",
+    "company": "Vigovia",
+    "startDate": "August 2025",
+    "endDate": "December 2025",
+    "logo": "vigovia.jpeg",
+    "link": "https://in.linkedin.com/company/vigovia"
+  },
+  {
+    "title": "Full Stack Intern",
+    "company": "Oddmind Innovations",
+    "startDate": "July 2024",
+    "endDate": "August 2024",
+    "logo": "oddmind.jpeg",
+    "link": "https://in.linkedin.com/company/oddmind-innovations"
+  }
+]
