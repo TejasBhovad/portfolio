@@ -11,6 +11,9 @@ importers:
       '@fontsource/gabarito':
         specifier: ^5.2.8
         version: 5.2.8
+      '@paper-design/shaders-react':
+        specifier: ^0.0.70
+        version: 0.0.70(react@19.2.3)
       react:
         specifier: ~19.2.3
         version: 19.2.3
@@ -308,6 +311,18 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@paper-design/shaders-react@0.0.70':
+    resolution: {integrity: sha512-9DkZXcyehorsZzyWnYV3OOO1i7rF7a5CkasjKJ1h1tLlY3JJLUEX9W+gZz7JgWHyvCimUu0OSq1sbHTb2OntRw==}
+    peerDependencies:
+      '@types/react': ^18 || ^19
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@paper-design/shaders@0.0.70':
+    resolution: {integrity: sha512-d9LQcmPoEm3+Y6Vuz7cvsnSelfTM5QD63yQ3ddLM7QGYfoSjbQiU38kzjA4O3oCQ6zv23o/IGvGA8k9S/L+kZw==}
 
   '@rolldown/pluginutils@1.0.0-beta.53':
     resolution: {integrity: sha512-vENRlFU4YbrwVqNDZ7fLvy+JR1CRkyr01jhSiDpE1u6py3OMzQfztQU2jxykW3ALNxO4kSlqIDeYyD0Y9RcQeQ==}
@@ -1340,6 +1355,13 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@paper-design/shaders-react@0.0.70(react@19.2.3)':
+    dependencies:
+      '@paper-design/shaders': 0.0.70
+      react: 19.2.3
+
+  '@paper-design/shaders@0.0.70': {}
 
   '@rolldown/pluginutils@1.0.0-beta.53': {}
 

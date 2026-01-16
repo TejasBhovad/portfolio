@@ -1,5 +1,7 @@
 import { readFileSync } from "fs";
 import { Link } from "waku";
+
+import Sphere from "../components/sphere";
 import LinkContainer from "../components/link-container";
 export default async function HomePage() {
   const data = await getData();
@@ -10,7 +12,9 @@ export default async function HomePage() {
     <div className="w-full flex-1 bg-background border-2 border-muted">
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <section className="w-full flex flex-col sm:flex-row sm:h-56   border-b-2 border-muted">
-        <div className="sm:h-full w-full sm:w-auto aspect-square sm:border-r-2 sm:border-b-0 border-b-2 border-muted"></div>
+        <div className="sm:h-full w-full sm:w-auto aspect-square sm:border-r-2 sm:border-b-0 border-b-2 border-muted">
+          <Sphere />
+        </div>
         {/* div that takes rest of space felx 1 or smth */}
         <div className="flex-1 flex flex-col  justify-between w-full h-full items-start">
           <div className="flex gap-2 flex-col p-5">
@@ -100,7 +104,7 @@ export default async function HomePage() {
 
                 <span className="-translate-y-6.75  ">
                   <span className="text-primary/0">
-                    scaled logo{project.title}
+                    {taglineParts[0]} log ,{project.title}
                   </span>
                   {taglineParts[1]}
                 </span>
