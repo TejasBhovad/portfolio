@@ -4,5 +4,17 @@
     "logo": "mcrender.png",
     "url": "https://mcrender.net",
     "tagline": "scaled <project>, a minecraft thumbnail utility, to 15K monthly users and made it self sustainable"
+  },
+  {
+    "title": "remoteupload",
+    "logo": "remoteupload.png",
+    "url": "https://remoteupload.vercel.app",
+    "tagline": "built <project>,  a file sharing platform that allows sharing from public pcs straight to your inbox"
+  },
+  {
+    "title": "unboxd",
+    "logo": "unboxd.png",
+    "url": "https://getunboxd.vercel.app",
+    "tagline": "co-engineered <project>, an AI shopping extension that analyzes reviews and suggests better buys."
   }
 ]

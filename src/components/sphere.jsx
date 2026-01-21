@@ -2,8 +2,8 @@
 import { Dithering } from "@paper-design/shaders-react";
 
 const Sphere = ({
-  width = 225,
-  height = 225,
+  width = 220,
+  height = 220,
   size = 1.75,
   speed = 0.1,
   scale = 0.8,
