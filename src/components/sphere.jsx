@@ -8,26 +8,34 @@ const Sphere = ({
   speed = 0.1,
   scale = 0.8,
   onWhite = false,
+  shape = "sphere",
+  type = "5x5",
+  rotation,
+  offsetX,
+  offsetY,
 }) => {
   const backgroundColor = onWhite ? "#fff" : "#fff";
   const textColor = onWhite ? "#00b3ff" : "white";
 
   return (
-    <div className="flex bg-red-400 items-center    justify-center">
+    <div className="flex items-center justify-center">
       <div className="relative" style={{ width, height }}>
         <Dithering
           width={width}
           height={height}
           colorBack={backgroundColor}
           colorFront="#00b3ff"
-          shape="sphere"
-          type="5x5"
+          shape={shape}
+          type={type}
           size={size}
           speed={speed}
           scale={scale}
+          rotation={rotation}
+          offsetX={offsetX}
+          offsetY={offsetY}
         />
 
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="hidden sm:flex absolute inset-0 items-center justify-center pointer-events-none">
           <div
             className="aspect-square rounded-full absolute bg-[#00b3ff]/40"
             style={{

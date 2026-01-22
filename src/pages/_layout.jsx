@@ -17,7 +17,10 @@ export default async function RootLayout({ children }) {
         precedence="font"
       />
       <div className="h-full w-full  min-h-screen flex flex-col">
-        <TriCol />
+        <div className="hidden sm:flex w-full h-fit flex-col">
+          <TriCol />
+        </div>
+
         <main className="flex-1 max-w-3xl w-full h-full   mx-auto flex flex-col">
           <Navbar />
           {children}

@@ -114,15 +114,82 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground font-gabarito; /* Or hardcode if not using theme */
+    @apply bg-background text-foreground font-gabarito;
+    /* Or hardcode if not using theme */
   }
 }
 
 * {
   font-family: var(--font-gabarito);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpSmall {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-2 {
+  animation: fadeIn 0.3s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-1 {
+  animation: slideUp 0.4s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-3 {
+  animation: slideUp 0.4s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-4 {
+  animation: slideUp 0.4s ease-out 0.45s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-item {
+  animation: slideUpSmall 0.3s ease-out forwards;
+  opacity: 0;
 }
