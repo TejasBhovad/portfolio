@@ -14,7 +14,7 @@ export default async function HomePage() {
     <div className="min-h-[calc(100vh-9rem)] flex flex-col bg-background border-2 border-muted">
       {/* Hero Section */}
       <section className="w-full flex flex-col sm:flex-row sm:h-56 border-b-2 border-muted">
-        <div className="h-40 sm:h-full flex w-full sm:w-auto sm:aspect-square sm:border-r-2 border-b-2 border-muted animate-fade-in justify-center items-center">
+        <div className="h-40 sm:h-full flex w-full sm:w-auto sm:aspect-square sm:border-r-2 border-b-0 border-muted animate-fade-in justify-center items-center">
           <div className="block sm:hidden w-full">
             <Sphere
               width="100%"
@@ -133,7 +133,7 @@ export default async function HomePage() {
                     <LinkContainer
                       logo={`/images/${project.logo}`}
                       label={project.title}
-                      link={project.url}
+                      link={`/projects/${project.slug}`}
                       title={project.title}
                     />
                   </div>

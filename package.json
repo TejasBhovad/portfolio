@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@fontsource/gabarito": "^5.2.8",
+    "@mdx-js/mdx": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
     "@paper-design/shaders-react": "^0.0.70",
     "react": "~19.2.3",
     "react-dom": "~19.2.3",
