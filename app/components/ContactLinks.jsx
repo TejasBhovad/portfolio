@@ -16,7 +16,7 @@ const ContactLinks = () => {
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/tejasbhovad",
+      url: "https://www.linkedin.com/in/tejas-bhovad",
       logo: <Linkedin size={24} />,
     },
     {
