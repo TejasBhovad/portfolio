@@ -1,3 +1,7 @@
+# Single-package repo, not a monorepo. pnpm 10+ keeps build-script approvals
+# here, but pnpm 9 — which is what Vercel runs — rejects the file outright
+# unless `packages` is present, so both fields have to stay.
+packages:
+  - .
 allowBuilds:
   '@vercel/speed-insights': true
-  esbuild: set this to true or false
