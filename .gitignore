@@ -37,3 +37,8 @@ next-env.d.ts
 
 # Million Lint
 .million
+
+# pnpm 10+ writes local build-script approvals here. This is a single-package
+# repo, so the file is machine state, not project config — and committing it
+# makes Vercel treat the repo as a workspace, which breaks Next.js detection.
+pnpm-workspace.yaml
