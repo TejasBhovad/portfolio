@@ -1,113 +1,180 @@
 [
   {
-    "id": 10,
+    "id": 12,
     "type": "web",
-    "projectName": "Cohesion",
-    "imageName": "cohesionl.png",
-    "projectDescription": "Create Connection styled games",
-    "featured": false,
-    "liveLink": "https://cohesion-game.vercel.app/",
-    "githubLink": "https://github.com/SiddharthSahani/cohesion"
-  },
-  {
-    "id": 1,
-    "type": "web",
-    "projectName": "SoundXLR",
-    "imageName": "soundxlr.png",
-    "projectDescription": "Web app to create and share Soundboards",
+    "projectName": "MC Render",
+    "projectDescription": "Minecraft player-model rendering in the browser",
     "featured": true,
-    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
-    "liveLink": "https://soundxlr.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/soundboard"
-  },
-  {
-    "id": 11,
-    "type": "web",
-    "projectName": "Uni Notes",
-    "imageName": "notes.png",
-    "projectDescription": "Notes Directory for University students",
-    "featured": false,
-    "liveLink": "https://dypatil.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/notes"
+    "liveLink": "https://mcrender.net",
+    "cover": "mcrender.jpg",
+    "tags": [
+      "Three.js",
+      "Next.js",
+      "Tailwind"
+    ]
   },
   {
     "id": 2,
     "type": "web",
     "projectName": "RemoteUpload",
-    "imageName": "remoteupload.png",
     "projectDescription": "Share files from your computer w/o login",
     "featured": false,
     "documentationLink": "https://tejasbhovad.notion.site/RemoteUpload-9660f8aacd5e4234a837411ae124a664",
     "liveLink": "https://remoteupload.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/remote-upload"
+    "githubLink": "https://github.com/TejasBhovad/remote-upload",
+    "icon": "remoteupload.png",
+    "tags": [
+      "Next.js",
+      "S3",
+      "Redis"
+    ]
+  },
+  {
+    "id": 10,
+    "type": "web",
+    "projectName": "Cohesion",
+    "projectDescription": "Create Connection styled games",
+    "featured": false,
+    "liveLink": "https://cohesion-game.vercel.app/",
+    "githubLink": "https://github.com/SiddharthSahani/cohesion",
+    "cover": "cohesion.png",
+    "icon": "cohesionl.png",
+    "tags": [
+      "SvelteKit",
+      "Redis"
+    ]
+  },
+  {
+    "id": 1,
+    "type": "web",
+    "projectName": "SoundXLR",
+    "projectDescription": "Web app to create and share Soundboards",
+    "featured": true,
+    "documentationLink": "https://tejasbhovad.notion.site/SoundXLR-f183fe7ce35c4cdc930a158b0a9b34f3?pvs=74",
+    "liveLink": "https://soundxlr.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/soundboard",
+    "cover": "soundxlr.jpeg",
+    "icon": "soundxlr.png",
+    "tags": [
+      "Next.js",
+      "Appwrite"
+    ]
+  },
+  {
+    "id": 11,
+    "type": "web",
+    "projectName": "Uni Notes",
+    "projectDescription": "Notes Directory for University students",
+    "featured": false,
+    "liveLink": "https://dypatil.vercel.app/",
+    "githubLink": "https://github.com/TejasBhovad/notes",
+    "icon": "notes.png",
+    "tags": [
+      "Next.js",
+      "PostgreSQL"
+    ]
   },
   {
     "id": 3,
     "type": "other",
     "projectName": "Ollama UI",
-    "imageName": "ollamaui.png",
     "projectDescription": "Chat with Llama3 locally",
     "featured": false,
     "documentationLink": "https://tejasbhovad.notion.site/Ollama-UI-55d9e19b4b34405d9a20457ab10801c3",
-    "githubLink": "https://github.com/TejasBhovad/ollama-ui"
+    "githubLink": "https://github.com/TejasBhovad/ollama-ui",
+    "cover": "ollama.png",
+    "icon": "ollamaui.png",
+    "tags": [
+      "Next.js",
+      "Ollama"
+    ]
   },
   {
     "id": 4,
     "type": "web",
     "projectName": "Code docs",
-    "imageName": "docs.png",
     "projectDescription": "Collection of code snippets taught in Uni",
     "featured": false,
     "documentationLink": "https://codes.super.site/",
     "liveLink": "https://tejasbhovad.github.io/docs",
-    "githubLink": "https://github.com/TejasBhovad/docs"
+    "githubLink": "https://github.com/TejasBhovad/docs",
+    "cover": "code.jpeg",
+    "icon": "docs.png",
+    "tags": [
+      "Astro",
+      "MDX"
+    ]
   },
   {
     "id": 5,
     "type": "other",
     "projectName": "Snippet Manager",
-    "imageName": "snippet.png",
     "projectDescription": "Made using Rust and TauriJS",
     "featured": false,
-    "githubLink": "https://github.com/TejasBhovad/snippet-manager"
+    "githubLink": "https://github.com/TejasBhovad/snippet-manager",
+    "cover": "snippet.jpeg",
+    "icon": "snippet.png",
+    "tags": [
+      "Rust",
+      "Tauri"
+    ]
   },
   {
     "id": 6,
     "type": "web",
     "projectName": "Notion Gradients",
-    "imageName": "notioncovers.png",
     "projectDescription": "Generate Gradient page covers for Notion",
     "featured": false,
     "liveLink": "https://notion-gradients.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/notion-covers"
+    "githubLink": "https://github.com/TejasBhovad/notion-covers",
+    "cover": "notion.jpeg",
+    "icon": "notioncovers.png",
+    "tags": [
+      "Next.js",
+      "Canvas"
+    ]
   },
   {
     "id": 7,
     "type": "other",
     "projectName": "UPixel",
-    "imageName": "upixel.png",
     "projectDescription": "JavaFX app to upscale pixelart",
     "featured": false,
-    "githubLink": "https://github.com/TejasBhovad/upixel"
+    "githubLink": "https://github.com/TejasBhovad/upixel",
+    "icon": "upixel.png",
+    "tags": [
+      "Java",
+      "JavaFX"
+    ]
   },
   {
     "id": 8,
     "type": "web",
     "projectName": "LinkThing",
-    "imageName": "linkthing.png",
     "projectDescription": "Full stack link tree clone",
     "featured": false,
     "liveLink": "https://linkthing.vercel.app/",
-    "githubLink": "https://github.com/TejasBhovad/link-thing"
+    "githubLink": "https://github.com/TejasBhovad/link-thing",
+    "cover": "link.jpeg",
+    "icon": "linkthing.png",
+    "tags": [
+      "Next.js",
+      "PostgreSQL"
+    ]
   },
   {
     "id": 9,
     "type": "web",
     "projectName": "AI Battles",
-    "imageName": "battlesim.png",
     "projectDescription": "AI based Castle Siege game",
     "featured": false,
     "liveLink": "https://aibattles.vercel.app/",
-    "githubLink": "https://github.com/erga-labs/gemini-battle-sim"
+    "githubLink": "https://github.com/erga-labs/gemini-battle-sim",
+    "cover": "battlesim.jpeg",
+    "icon": "battlesim.png",
+    "tags": [
+      "Python",
+      "React"
+    ]
   }
 ]

@@ -1,37 +1,46 @@
-"use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
-const page = () => {
-  return (
-    <div className="w-full h-screen flex gap-3 flex-col items-center justify-center text-center">
-      <motion.span
-        className="text-4xl font-semibold"
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.5 }}
-      >
-        🏗️ Blog is under construction
-      </motion.span>
-      <Link href="https://tejasbhovad.github.io/docs/blog">
-        <motion.span
-          className="text-md font-mediun hover:underline text-muted"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
-        >
-          https://tejasbhovad.github.io/docs/blog
-        </motion.span>
-      </Link>
-    </div>
-  );
+import { ArrowUpRight } from "lucide-react";
+import Nav from "@/components/site/nav";
+import Footer from "@/components/site/footer";
+import { PageHeader } from "@/components/site/section";
+
+export const metadata = {
+  title: "Blog",
+  description: "Writing by Tejas Bhovad — currently hosted elsewhere.",
+  alternates: { canonical: "/blog" },
 };
 
-export default page;
+const Page = () => (
+  <>
+    <Nav />
+    <main id="main" className="flex min-h-[68vh] flex-col justify-center pb-section">
+      <PageHeader
+        eyebrow="Writing"
+        title={
+          <>
+            Not here
+            <br />
+            yet.
+          </>
+        }
+      >
+        The blog hasn&apos;t moved onto this site. Everything I&apos;ve written
+        so far lives in my docs space — build notes, university material, and the
+        occasional write-up of something that broke.
+      </PageHeader>
+      <div className="container">
+        <Link
+          href="https://tejasbhovad.github.io/docs/blog"
+          target="_blank"
+          className="inline-flex items-center gap-2 rounded-full bg-inverted px-5 py-2.5 text-sm font-medium text-inverted transition-opacity hover:opacity-90"
+        >
+          Read it there
+          <ArrowUpRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+        </Link>
+      </div>
+    </main>
+    <Footer />
+  </>
+);
+
+export default Page;

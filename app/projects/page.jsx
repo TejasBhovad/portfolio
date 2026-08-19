@@ -1,68 +1,62 @@
-"use client";
-
-import NavbarWrapper from "../components/NavbarWrapper";
+import Nav from "@/components/site/nav";
+import Footer from "@/components/site/footer";
+import Section, { PageHeader } from "@/components/site/section";
+import { ProjectTile } from "@/components/site/project-card";
 import projects from "@/public/data/projects.json";
-import { ProjectCard } from "@/components/project-card";
 
-const Page = () => {
-  const webProjects = projects.filter((project) => project.type === "web");
-  const otherProjects = projects.filter((project) => project.type !== "web");
-
-  return (
-    <NavbarWrapper type="top">
-      <div className="w-full gradient-project h-auto sm:h-full pt-16">
-        <div className="max-w-7xl  mx-auto sm:h-full w-full px-9 py-2  flex flex-col gap-8">
-          <section className="flex flex-col  gap-2 w-full sm:h-auto justify-start">
-            <span className="w-full h-auto justify-start text-2xl sm:text-3xl lg:text-4xl font-bold">
-              Projects
-            </span>
-            <span className="w-full h-fit justify-start text-muted-foreground text-sm sm:text-md lg:text-lg">
-              I worked on several projects over the years, here are the ones I
-              am proud of.
-              <span className="hidden sm:inline">
-                {" "}
-                Many of the projects are Open Source, if any of the project
-                piques your interest feel free to contribute to them.
-              </span>
-            </span>
-          </section>
-
-          {webProjects.length > 0 && (
-            <section className="flex flex-col gap-4 ">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {webProjects.map((project) => (
-                  <ProjectCard
-                    key={project.id}
-                    title={project.projectName}
-                    description={project.projectDescription}
-                    image={project.imageName}
-                    link={project.liveLink || project.githubLink}
-                  />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {otherProjects.length > 0 && (
-            <section className="flex flex-col gap-4 pb-4">
-              <h2 className="text-xl font-semibold">Other Projects</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {otherProjects.map((project) => (
-                  <ProjectCard
-                    key={project.id}
-                    title={project.projectName}
-                    description={project.projectDescription}
-                    image={project.imageName}
-                    link={project.liveLink || project.githubLink}
-                  />
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
-      </div>
-    </NavbarWrapper>
-  );
+export const metadata = {
+  title: "Projects",
+  description:
+    "Everything Tejas Bhovad has shipped — web apps, 3D tools, desktop utilities and games. Most of it is open source.",
+  alternates: { canonical: "/projects" },
 };
+
+const groups = [
+  { key: "web", label: "Web", blurb: "Things that live at a URL." },
+  {
+    key: "other",
+    label: "Desktop & experiments",
+    blurb: "Native apps, tooling, and things built to learn something.",
+  },
+];
+
+const Page = () => (
+  <>
+    <Nav />
+    <main id="main">
+      <PageHeader eyebrow="Index" title="Projects">
+        {projects.length} things I&apos;ve built over the years, from a
+        browser-based 3D renderer with six figures of traffic down to a weekend
+        Rust experiment. Most are open source — if one catches your eye, pull
+        requests are welcome.
+      </PageHeader>
+
+      {groups.map((group, i) => {
+        const items = projects.filter((p) =>
+          group.key === "web" ? p.type === "web" : p.type !== "web"
+        );
+        if (items.length === 0) return null;
+
+        return (
+          <Section
+            key={group.key}
+            index={String(i + 1).padStart(2, "0")}
+            title={group.label}
+            aside={String(items.length)}
+            blurb={group.blurb}
+            className={i === groups.length - 1 ? "pb-section" : ""}
+          >
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {items.map((project) => (
+                <ProjectTile key={project.id} project={project} />
+              ))}
+            </div>
+          </Section>
+        );
+      })}
+    </main>
+    <Footer />
+  </>
+);
 
 export default Page;

@@ -1,39 +1,34 @@
 import Image from "next/image";
 
-// This file allows you to provide custom React components
-// to be used in MDX files. You can import and use any
-// React component you want, including inline styles,
-// components from other libraries, and more.
-
+/** Styling for raw markdown inside MDX case-study pages. */
 export function useMDXComponents(components) {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
-    h1: ({ children }) => (
-      <h1
-        className="sm:text-4xl text-2xl font-bold w-full text-start text-baseColor
-      "
-      >
-        {children}
-      </h1>
-    ),
+    h1: ({ children }) => <h1 className="text-h2 text-baseColor">{children}</h1>,
     h2: ({ children }) => (
-      <h2
-        className="sm:text-3xl text-xl font-bold w-full text-start text-baseColor/75
-      "
-      >
+      <h2 className="text-label text-faint">{children}</h2>
+    ),
+    h3: ({ children }) => <h3 className="text-h3 text-baseColor">{children}</h3>,
+    p: ({ children }) => <p className="text-body text-muted">{children}</p>,
+    ul: ({ children }) => (
+      <ul className="flex list-disc flex-col gap-2 pl-5 text-body text-muted">
         {children}
-      </h2>
+      </ul>
+    ),
+    a: ({ children, ...props }) => (
+      <a className="text-accent link-underline" {...props}>
+        {children}
+      </a>
+    ),
+    strong: ({ children }) => (
+      <strong className="font-medium text-baseColor">{children}</strong>
+    ),
+    code: ({ children }) => (
+      <code className="rounded border border-line bg-surface px-1.5 py-0.5 text-meta text-baseColor">
+        {children}
+      </code>
     ),
     img: (props) => (
-      <Image
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-        {...props}
-      />
-    ),
-    // bold
-    strong: ({ children }) => (
-      <strong className="font-bold text-baseColor">{children}</strong>
+      <Image sizes="100vw" style={{ width: "100%", height: "auto" }} {...props} />
     ),
     ...components,
   };

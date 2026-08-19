@@ -1,21 +1,47 @@
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import Nav from "@/components/site/nav";
+import Footer from "@/components/site/footer";
+import { PageHeader } from "@/components/site/section";
+
+export const metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-base">
-      <div className="max-w-md px-4 text-center">
-        <h1 className="text-8xl font-bold text-baseColor">404</h1>
-        <p className="mt-4 text-lg text-muted">
-          Oops, the page you're looking for doesn't exist.
-        </p>
-        <Link
-          href="/"
-          className="inline-flex items-center justify-center mt-8 px-4 py-2 text-sm font-medium bg-inverted text-inverted rounded-md"
-          prefetch={false}
+    <>
+      <Nav />
+      <main
+        id="main"
+        className="flex min-h-[68vh] flex-col justify-center pb-section"
+      >
+        <PageHeader
+          eyebrow="Error 404"
+          title={
+            <>
+              Nothing
+              <br />
+              here.
+            </>
+          }
         >
-          Go back home
-        </Link>
-      </div>
-    </div>
+          That page doesn&apos;t exist — it may have been renamed, or never
+          existed at all.
+        </PageHeader>
+        <div className="container">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-baseColor transition-colors hover:bg-toggleHover"
+          >
+            <ArrowLeft
+              className="h-4 w-4 transition-transform group-hover:-translate-x-1"
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+            Back home
+          </Link>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

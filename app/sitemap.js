@@ -1,22 +1,20 @@
+import { profile } from "@/lib/content";
+
 export default function sitemap() {
+  const now = new Date();
   return [
+    { url: profile.site, lastModified: now, changeFrequency: "monthly", priority: 1 },
     {
-      url: "https://tejasbhovad.com",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: "https://tejasbhovad.com/projects",
-      lastModified: new Date(),
+      url: `${profile.site}/projects`,
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://tejasbhovad.com/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.5,
+      url: `${profile.site}/blog`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }

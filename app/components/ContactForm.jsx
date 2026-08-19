@@ -1,23 +1,22 @@
 "use client";
+
 import emailjs from "@emailjs/browser";
 import { useState, useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
-  DialogTrigger,
+  DialogDescription,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
+const fieldClass =
+  "w-full rounded-md border border-line bg-base px-3 py-2.5 text-sm text-baseColor placeholder:text-faint focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/25";
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const form = useRef();
@@ -35,21 +34,19 @@ const ContactForm = () => {
       .then(
         () => {
           toast({
-            title: "Message sent!",
-            description: "Thank you for reaching out.",
+            title: "Message sent",
+            description: "Thanks for reaching out — I'll reply soon.",
           });
           setIsOpen(false);
-          setName("");
-          setEmail("");
-          setMessage("");
+          form.current?.reset();
         },
         (error) => {
           toast({
-            title: "Error",
-            description: "Failed to send message. Please try again.",
+            title: "Couldn't send that",
+            description: "Something went wrong. Try email instead?",
             variant: "destructive",
           });
-          console.error(error.text);
+          console.error(error?.text ?? error);
         }
       )
       .finally(() => setLoading(false));
@@ -57,59 +54,66 @@ const ContactForm = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger className="bg-inverted text-inverted px-6 rounded-sm text-lg font-semibold py-1 transition-all ">
+      <button
+        type="button"
+        onClick={() => setIsOpen(true)}
+        className="inline-flex items-center gap-2 rounded-full bg-inverted px-5 py-2.5 text-sm font-medium text-inverted transition-opacity hover:opacity-90"
+      >
         Send a note
-      </DialogTrigger>
-      <DialogContent className="max-w-md w-full rounded-2xl shadow-xl border-0 bg-background">
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-6">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-baseColor text-center mb-2">
-              Get in touch
-            </DialogTitle>
-            <p className="text-muted text-center text-base mb-4">
-              I’ll get back to you as soon as possible.
-            </p>
+        <ArrowUpRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+      </button>
+
+      <DialogContent className="w-full max-w-md rounded-lg border border-line bg-surface p-6">
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5">
+          <DialogHeader className="text-left">
+            <DialogTitle className="text-h3 text-baseColor">Get in touch</DialogTitle>
+            <DialogDescription className="text-sm text-muted">
+              Drop a line and I&apos;ll get back to you as soon as I can.
+            </DialogDescription>
           </DialogHeader>
-          <div className="flex flex-col gap-4">
-            <Input
-              type="text"
-              required
-              name="user_name"
-              placeholder="Your Name"
-              className="border border-muted/30 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md py-2 px-3 bg-foreground"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              autoComplete="name"
-            />
-            <Input
-              required
-              type="email"
-              name="user_email"
-              placeholder="Your Email"
-              className="border border-muted/30 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md py-2 px-3 bg-foreground"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              autoComplete="email"
-            />
-            <textarea
-              required
-              name="message"
-              placeholder="Your Message"
-              className="border border-muted/30 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md py-2 px-3 bg-foreground min-h-[96px] resize-none text-base"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
+
+          <div className="flex flex-col gap-3">
+            <label className="flex flex-col gap-1.5">
+              <span className="text-label text-faint">Name</span>
+              <input
+                type="text"
+                required
+                name="user_name"
+                autoComplete="name"
+                placeholder="Ada Lovelace"
+                className={fieldClass}
+              />
+            </label>
+            <label className="flex flex-col gap-1.5">
+              <span className="text-label text-faint">Email</span>
+              <input
+                type="email"
+                required
+                name="user_email"
+                autoComplete="email"
+                placeholder="ada@example.com"
+                className={fieldClass}
+              />
+            </label>
+            <label className="flex flex-col gap-1.5">
+              <span className="text-label text-faint">Message</span>
+              <textarea
+                required
+                name="message"
+                rows={4}
+                placeholder="What are you building?"
+                className={`${fieldClass} min-h-[112px] resize-none`}
+              />
+            </label>
           </div>
-          <DialogFooter>
-            <Button
-              variant="secondary"
-              type="submit"
-              disabled={loading}
-              className="w-full bg-primary text-inverted hover:bg-primary/90 transition-all font-semibold py-2 rounded-md"
-            >
-              {loading ? "Sending..." : "Submit"}
-            </Button>
-          </DialogFooter>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-md bg-inverted py-2.5 text-sm font-medium text-inverted transition-opacity hover:opacity-90 disabled:opacity-60"
+          >
+            {loading ? "Sending…" : "Send message"}
+          </button>
         </form>
       </DialogContent>
     </Dialog>
